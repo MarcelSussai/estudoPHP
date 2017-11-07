@@ -32,6 +32,12 @@
     }
     echo $pl;
     
+    // Concatenação de textos
+    $v01 = "Marcel ";
+    $v02 = "Sussai";
+    $v03 = $v01.$v02;
+    echo $v03.$pl;
+    
     // Para nomear variavel comece com $ e os unicos caracteres especiais é _ comece com letras e não com números.
     // Porém existem os tipo e os tipos podem ser: (repare que não preciso especificar os tipos em PHP)
     // -----------------------
@@ -50,11 +56,8 @@
     echo $maioridade.$pl;
     // -----------------------
     // Tipos Compostos 
-    // Concatenação de textos
-    $v01 = "Marcel ";
-    $v02 = "Sussai";
-    $v03 = $v01.$v02;
-    echo $v03.$pl;
-
+    // Arrays:
+    $instrumentos = array('Bateria', 'Guitara', 'Contra Baixo', 'Teclado');
+    echo $instrumentos[2].$pl;
     // -------------------------------------------------------------------------------------------------
 ?>
