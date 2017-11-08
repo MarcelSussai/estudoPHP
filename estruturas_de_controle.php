@@ -1,6 +1,6 @@
 <?php
 require_once 'var_util.php';
-// -Estruturas de controle--------------------------------------------┐
+// -If--------------------------------------------┐
     // ┌--------------------------------------------------------------┐
     // |    if                                                        |
     // | A resposta da idade                                          |
@@ -33,6 +33,12 @@ require_once 'var_util.php';
         else {
             echo "não é um valor válido!";
         }
+    // | comparando com o if shortcut ou seja, uma maneira curta de   |
+    // | validar coisas simples como a escrita de um texto            |
+    // | chamado de operador ternário                                 |
+    // | Exemplo:                                                     |
+        echo ($idadeR < $idadeA)?"Menor de idade":"Maior de idade";
     // └--------------------------------------------------------------┘
+// -------------------------------------------------------------------┘
 
 ?>
