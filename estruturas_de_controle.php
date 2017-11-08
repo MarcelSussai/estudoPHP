@@ -94,6 +94,24 @@ require_once 'var_util.php';
             echo $i." ";
         }
         echo $pl.$pl;
+    // | retirando partes da pesquisa                                 |
+        for ($i = 0; $i <= 1000; $i+=5) {
+            if ($i > 64 && $i < 512) continue;
+            echo $i." ";
+        }
+        echo $pl.$pl;
+    // | retornando datas com for
+        for ($i=date("Y"); $i > date("Y")-100; $i--) {
+            echo $i." ";
+        }
+        echo $pl.$pl;
+    // | fazendo um select
+        echo "<select>";
+        for ($i=date("Y"); $i > date("Y")-1000; $i--) {
+            echo '<option value="'.$i.'">'.$i.'</option>';
+
+        }
+        echo "</select>";
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
 
