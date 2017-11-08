@@ -7,9 +7,8 @@ include 'var_util.php';
     // |    Aspas                                                     |
         $aspasDuplas = "Aspas Duplas";
         $aspasSimples = 'Aspas Simples!';
-        echo $pr1;
         echo var_dump($aspasDuplas, $aspasSimples);
-        echo $pr2.$pl.$hr;
+        echo $pl.$hr;
     // | Aqui a váriável funciona:                                    |
         echo "Este é o texto com $aspasDuplas".$pl;
     // | Aqui a variável NÃO funciona:                                |
@@ -41,18 +40,14 @@ include 'var_util.php';
         $frase = "Estou programando PHP, programar é interessante e educativo";
         $palavra = "interessante";
         $q = strpos($frase, $palavra );
-        echo $pr1;
         echo var_dump($q);
-        echo $pr2;
     // | outro jeito
         $q2 = substr($frase, 0, $q);
         $q3 = substr($frase, $q);
         $q4 = substr($frase, $q + strlen($palavra), strlen($frase));
-        echo $pr1;
         echo var_dump($q2);
         echo var_dump($q3);
         echo var_dump($q4);
-        echo $pr2;
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
 ?>
