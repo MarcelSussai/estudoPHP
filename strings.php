@@ -8,7 +8,7 @@ include 'var_util.php';
         $aspasDuplas = "Aspas Duplas";
         $aspasSimples = 'Aspas Simples!';
         echo var_dump($aspasDuplas, $aspasSimples);
-        echo $pl.$hr;
+        echo $hr;
     // | Aqui a váriável funciona:                                    |
         echo "Este é o texto com $aspasDuplas".$pl;
     // | Aqui a variável NÃO funciona:                                |
