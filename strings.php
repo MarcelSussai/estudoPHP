@@ -1,5 +1,5 @@
 <?php 
-include 'var_util.php';
+require_once 'var_util.php';
 
 
 // -STRINGS-----------------------------------------------------------┐
@@ -37,7 +37,7 @@ include 'var_util.php';
     // ┌--------------------------------------------------------------┐
     // |    Verificando Strings                                       |
     // | procurando a posição de uma string                           |
-        $frase = "Estou programando PHP, programar é interessante e educativo";
+        $frase = "Estou programando PHP, é interessante e educativo";
         $palavra = "interessante";
         $q = strpos($frase, $palavra );
         echo var_dump($q);
