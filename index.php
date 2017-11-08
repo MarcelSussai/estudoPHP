@@ -38,6 +38,7 @@
         // include 'variaveis.php';
         // include 'operadores.php';
         // include 'strings.php';
+        include 'estruturas_de_controle.php';
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
 ?>

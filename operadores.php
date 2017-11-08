@@ -135,10 +135,10 @@ require_once 'var_util.php';
 // -------------------------------------------------------------------┐
     // ┌--------------------------------------------------------------┐
     // |    Exemplo ordem de execução                                 |
-    // | Operador &&                                                  |
+    // | Operador &&  e                                               |
         $resultado = (10 + 3) / 2 > 5 || 10 + 5 < 3;
         var_dump($resultado);
-    // | Operador ||                                                  |
+    // | Operador ||  ou                                              |
         $resultado = (10 + 3) / 2 > 5 && 10 + 5 < 3; 
         $teste = 32;
         var_dump($teste);
