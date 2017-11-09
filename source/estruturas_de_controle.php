@@ -105,14 +105,13 @@ require_once 'var_util.php';
         for ($i=date("Y"); $i > date("Y")-100; $i--) {
             echo $i." ";
         }
-        echo $pl.$pl;
+        echo $hr;
     // | fazendo um select
         echo "<select>";
         for ($i=date("Y"); $i > date("Y")-1000; $i--) {
             echo '<option value="'.$i.'">'.$i.'</option>';
-
         }
-        echo "</select>";
+        echo "</select>".$pl.$hr;
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
 
@@ -122,12 +121,23 @@ require_once 'var_util.php';
     // |    Foreach                                                   |
     // | De novo, há no PHP funções nativas que tratam a data, mas    |
     // | para fins didáticos:                                         |
+    // | Array a percorrer:                                           |
         $meses = array(
             "Janeiro", "Fevereiro", "Março",
             "Abril", "Maio", "Junho",
             "Julho", "Agosto", "Setembro",
             "Outubro", "Novembro", "Dezembro"
-        )
+        );
+    // | Foreach                                                      |
+        foreach($meses as $mes) {
+            echo "O mês é ".$mes.$pl;
+        }
+        echo $hr;
+    // | para saber a posição
+        foreach($meses as $index => $mes) {
+            echo "O mês é ".$mes." e o indice ".$index.$pl;
+        }
+        echo $hr;
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
 

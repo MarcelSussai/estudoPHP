@@ -18,8 +18,8 @@
 
     // ┌--------------------------------------------------------------┐
     // |    Variaveis úteis                                           |
-        require_once 'var_util.php';
-        include_once 'head.php';
+        require_once 'source/var_util.php';
+        include_once 'source/head.php';
     // | Antes, um olá mundo .... :)                                  |
     // |    Olá Mundo!                                                |
         echo "Hello World - Olá Mundo ! Editando um arquivo";
@@ -28,7 +28,7 @@
 
     // ┌--------------------------------------------------------------┐
     // |    Exemplos de includes                                      |
-        // include 'somar.php';
+        // include 'source/somar.php';
         // echo somar(2,14).$pl;
         // echo somar(2,6).$pl;
         // echo somar(200,56).$pl;
@@ -36,10 +36,10 @@
 
     // ┌--------------------------------------------------------------┐
     // |    Arquivos                                                  |
-        require 'variaveis.php';
-        // include 'operadores.php';
-        // include 'strings.php';
-        // include 'estruturas_de_controle.php';
+        // require 'source/variaveis.php';
+        // include 'source/operadores.php';
+        // include 'source/strings.php';
+        include 'source/estruturas_de_controle.php';
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
 
