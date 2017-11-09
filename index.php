@@ -19,6 +19,7 @@
     // ┌--------------------------------------------------------------┐
     // |    Variaveis úteis                                           |
         require_once 'var_util.php';
+        include_once 'head.php';
     // | Antes, um olá mundo .... :)                                  |
     // |    Olá Mundo!                                                |
         echo "Hello World - Olá Mundo ! Editando um arquivo";
@@ -35,10 +36,18 @@
 
     // ┌--------------------------------------------------------------┐
     // |    Arquivos                                                  |
-        // include 'variaveis.php';
+        require 'variaveis.php';
         // include 'operadores.php';
         // include 'strings.php';
-        include 'estruturas_de_controle.php';
+        // include 'estruturas_de_controle.php';
+    // └--------------------------------------------------------------┘
+// -------------------------------------------------------------------┘
+
+// -Final-------------------------------------------------------------┐
+    // ┌--------------------------------------------------------------┐
+    // |    Final da Página                                           |
+        echo $pl;
+        finalPagina();
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
 ?>

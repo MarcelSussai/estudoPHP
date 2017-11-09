@@ -18,13 +18,13 @@ require_once 'var_util.php';
     // | Portanto PHP é fracamente tipada.                            |
     // | Para exibir a váriavel utilizamos o comando echo             |
         echo $nome_variavel.$pl;
-        echo $variavel_str_aspas_simples.$pl;
+        echo $variavel_str_aspas_simples.$pl.$hr;
     // | como mostrar detalhes do tipo da variável com var_dump       |
         var_dump($variavel_boolean);
-        echo $pl;
+        echo $hr;
     // | para apagar/"matar" uma variavel                             |
         $obito = "variavel a ser morta";
-        echo $pl.$obito.$pl;
+        echo $obito.$pl;
         unset($obito);
     // | Verificando a variável                                       |
         if (isset($obito)){
@@ -47,18 +47,40 @@ require_once 'var_util.php';
         echo $hr;
     // | Para nomear variavel comece com $ e os unicos caracteres     |
     // | especiais é _ comece com letras e não com números.           |
-    // | Porém existem os tipo e os tipos podem ser:                  |
+    // | Porém existem os tipos e os tipos podem ser:                 |
     // | (repare que não preciso especificar os tipos em PHP)         |
+    // | (int), (integer) - molde para inteiro                        |
+    // | (bool), (boolean) - converte para booleano                   |
+    // | (float), (double), (real) - converte para número             |
+    // | de ponto flutuante                                           |
+    // | (string) - converte para string                              |
+    // | (array) - converte para array                                |
+    // | (object) - converte para objeto                              |
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
 
 // -Tipos básicos-----------------------------------------------------┐
     // ┌--------------------------------------------------------------┐
     // |    Tipos Básicos de Variáveis                                |
-        echo "<h1>Tipos Básicos</h1>";
     // | Números inteiros (int):                                      |
         $anoNasc = 1986;
-        echo $anoNasc.$pl;
+        echo $anoNasc.$pl.$hr;
+    // | Assim podemos definir os tipos inteiros                      |
+    // | número decimal                                               |
+        $a = 2048;
+        echo var_dump($a);
+    // | um número negativo                                           |
+        $a = -512;
+        echo var_dump($a);
+    // | número octal (equivalente a 83 em decimal)                   |
+        $a = 0123;
+        echo var_dump($a);
+    // | número hexadecimal (equivalente a 26 em decimal)             |
+        $a = 0x1A;
+        echo var_dump($a);
+    // | número binário (equivalente ao 255 decimal)                  |
+        $a = 0b11111111; 
+        echo var_dump($a).$hr;
     // | Números ponto flutuante (float):                             |
         $preco = 0.50;
         echo $preco.$pl;
@@ -68,6 +90,9 @@ require_once 'var_util.php';
     // | Verdadeiro ou falso (boolean):                               |
         $maioridade = true;
         echo $maioridade.$pl.$hr;
+    // | são considerados falsos: false - 0 - 0.0 - "" - "0"          |
+    // | array sem elementos - NULL - simpleXML de tags vazias        |
+    // | qualquer outro valor é true                                  |
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
 
@@ -82,13 +107,12 @@ require_once 'var_util.php';
         echo $instrumentos[2].$pl.$hr;
     // | Objetos:                                                     |
         $nascimento = new DateTime();
-        echo $pl;
         var_dump($nascimento);
         echo $hr;
     // | Especiais:                                                   |
         $arquivo = fopen("exemplo.php","r");
         var_dump($arquivo);
-        echo $pl;
+        echo $hr;
         // $nome = $_GET["a"]; 
     // | é preciso passar a variavel por url colocando < ?a=123 >     |
     // | no final da url                                              |
@@ -98,7 +122,7 @@ require_once 'var_util.php';
         $var_num = "123";
         $var_num_num = (int)$var_num; 
     // | forçando a mudança de tipo, independente de sua natureza     |
-        echo $pl.$var_num_num.$pl.$hr;
+        echo $var_num_num.$pl.$hr;
     // | Mostrando Ip                                                 |
         $ip = $_SERVER["REMOTE_ADDR"];
         echo $ip.$pl;
@@ -129,4 +153,35 @@ require_once 'var_util.php';
 	// └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
 
+
+// -Dicas-------------------------------------------------------------┐
+    // ┌--------------------------------------------------------------┐
+    // |    Verificando e Mudando Tipo                                |
+    // | Como conseguir o tipo de uma variável                        |
+        $exemplo1 = "Texto Qualquer";
+        $exemplo2 = 1024;
+        $exemplo3 = true;
+        $exemplo4 = 64.8;
+        echo gettype($exemplo1).$pl;
+        echo gettype($exemplo2).$pl;
+        echo gettype($exemplo3).$pl;
+        echo gettype($exemplo4).$pl.$hr;
+    // | Verificando por tipo                                         |
+        function verificarvarsimples($var) {
+            global $pl, $hr;
+            if (is_string($var)) {
+                echo "É uma String".$pl.$hr;
+            } else if (is_int($var)) {
+                echo "é um Int".$pl.$hr;
+            } else {
+                echo "é outra coisa, etc".$pl.$hr;
+            }
+        }
+        verificarvarsimples($exemplo2);
+    // |    Mudando tipo com settype()                                |
+        settype($exemplo2, "string");
+        echo $exemplo2.$pl.$hr;
+        verificarvarsimples($exemplo2);
+    // └--------------------------------------------------------------┘
+// -------------------------------------------------------------------┘
 ?>
