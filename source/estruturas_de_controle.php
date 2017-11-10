@@ -49,7 +49,7 @@ require_once 'var_util.php';
         $diaSemana = date("w");
     // | caso seja o especificado executa o comando antes do break    |
     // | exite função nativa php para tratar datas, mas é apenas      |
-    // | para fins didáticos:                                          |
+    // | para fins didáticos:                                         |
         switch ($diaSemana) {
             case 0:
                 echo "domingo";
@@ -133,15 +133,72 @@ require_once 'var_util.php';
             echo "O mês é ".$mes.$pl;
         }
         echo $hr;
-    // | para saber a posição
+    // | para saber a posição                                         |
         foreach($meses as $index => $mes) {
             echo "O mês é ".$mes." e o indice ".$index.$pl;
         }
         echo $hr;
+    // | com html                                                     |
+        ?>
+        <form>
+            Nome: 
+            <input type="text" name="Nome"><br>
+            Data de Nascimento:
+            <input type="date" name="Nascimento"><br>
+            <input type="submit" name="Enviar">
+        </form>
+        <hr>
+        <?php
+    // | agora fazemos assim:                                         |
+        if (isset($_GET)) {
+            foreach($_GET as $key => $value) {
+                echo "Nome do campo: ".$key.$pl;
+                echo "Valor do campo: ".$value.$pl.$hr;
+            }
+        }
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
 
-
+// -While e do while--------------------------------------------------┐
+    // ┌--------------------------------------------------------------┐
+    // |    While                                                     |
+    // | variavel utilizada                                           |
+        $condição  = true;
+    // | laço                                                         |
+        while ($condição) {
+            $numero = rand(1, 10);
+            if ($numero === 3) {
+                echo "Três!".$pl;
+                $condição = false;
+            }
+            echo $numero." ";
+        }
+        echo $hr;
+    // └--------------------------------------------------------------┘
+    // ┌--------------------------------------------------------------┐
+    // |    Do While                                                  |
+        $tt = 160;
+        $dc = 0.9;
+    // | Utilizando                                                   |
+        do {
+            $tt *= $dc;
+        } while ($tt > 100);
+        echo $tt.$hr;
+    // | utilize um contador para evitar o perigo de loop infinito    |
+    // | Outro Exemplo                                                |
+        $contador = 1;
+        do {
+            if ($contador > 1) {
+                echo $contador." vezes".$pl;
+            } else if ($contador <= 1) {
+                echo $contador." vez".$pl;
+            }
+            $contador++;
+        } while ($contador <= 10);
+        echo $hr;
+    // | Repare que validei a necessidade de usar plural              |
+    // └--------------------------------------------------------------┘
+// -------------------------------------------------------------------┘
 
 
 
