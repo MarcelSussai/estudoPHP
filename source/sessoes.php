@@ -27,7 +27,9 @@ require_once 'var_util.php';
                     ."sessoes_ex_01.php'>Exemplo 01</a>".$hr;
     // | Exibindo                                                     |
         echo $linkEx01;
+        echo session_id().$hr;
+        $_SESSION["contagem"]++;
+        echo $_SESSION["contagem"].$hr;
     // └--------------------------------------------------------------┘
-
 // -------------------------------------------------------------------┘
 ?>
