@@ -41,7 +41,8 @@
         // include 'source/strings.php';
         // include 'source/estruturas_de_controle.php';
         // include 'source/arrays.php';
-        include 'source/constantes.php';
+        // include 'source/constantes.php';
+        include 'source/sessoes.php';
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
 

@@ -48,7 +48,7 @@ require_once 'var_util.php';
     // |    Switch Case                                               |
         $diaSemana = date("w");
     // | caso seja o especificado executa o comando antes do break    |
-    // | exite função nativa php para tratar datas, mas é apenas      |
+    // | existe função nativa php para tratar datas, mas é apenas      |
     // | para fins didáticos:                                         |
         switch ($diaSemana) {
             case 0:
