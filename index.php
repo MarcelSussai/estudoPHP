@@ -22,7 +22,7 @@
         include_once 'source/head.php';
     // | Antes, um olá mundo .... :)                                  |
     // |    Olá Mundo!                                                |
-        echo "Hello World - Olá Mundo ! Editando um arquivo";
+        echo "Hello World - Olá Mundo ! Estudo!";
         echo $pl.$hr;
     // └--------------------------------------------------------------┘
 
@@ -40,7 +40,8 @@
         // include 'source/operadores.php';
         // include 'source/strings.php';
         // include 'source/estruturas_de_controle.php';
-        include 'source/arrays.php';
+        // include 'source/arrays.php';
+        include 'source/constantes.php';
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
 
