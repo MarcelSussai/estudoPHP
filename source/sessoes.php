@@ -16,7 +16,7 @@ require_once 'var_util.php';
 
     // ┌--------------------------------------------------------------┐
     // |    Variáveis de sessão                                       |
-    // | para iniciar a função:                                       |
+    // | para iniciar a sessão:                                       |
         session_start();
     // | para guardar informações na sessão                           |
         $_SESSION["nome"] = "Marcel";
@@ -24,9 +24,10 @@ require_once 'var_util.php';
     // | para criar o link para a exibição da sessão                  |
         $linkEx01 = "<a class='link1' href='source"
                     .DIRECTORY_SEPARATOR
-                    ."sessoes_ex_01.php'>Exemplo 01</a>";
+                    ."sessoes_ex_01.php'>Exemplo 01</a>".$hr;
     // | Exibindo                                                     |
         echo $linkEx01;
     // └--------------------------------------------------------------┘
+
 // -------------------------------------------------------------------┘
 ?>
