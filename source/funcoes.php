@@ -19,7 +19,7 @@ require_once 'var_util.php';
 
 // -Parametros de funções---------------------------------------------┐
     // ┌--------------------------------------------------------------┐
-    // |    Parametros de funções                                     |
+    // |    Parametros por valor                                      |
     // | Exemplo de função com parâmetros                             |
     // | Parâmetros sem valor padrão ponha primeiro, a esquerda       |
     // | os que tiveram valores padrões não sendo obrigatório         |
@@ -37,6 +37,70 @@ require_once 'var_util.php';
         echo respondeNome('Marcel', 'Sussai', 31);
         echo respondeNome('Gláucia', 'Mariane Rosa', 28);
         echo respondeNome('NomeTeste', 'SObrenomeTeste');
+    // | Para um função que pode receber vários parâmetros ou não     |
+        function ola() {
+            $argu = func_get_args();
+            var_dump($argu);
+        }
+    // | Utilizando a função                                          |
+        echo ola("Bom Dia", "outro valor").$hr;
+        echo ola("tudo bom").$hr;
+        echo ola(12, 24, 46, 82).$hr;
+        echo ola("quantos quiser", 32, true).$hr;
+    // └--------------------------------------------------------------┘
+
+    // ┌--------------------------------------------------------------┐
+    // |    Parametros por referência                                 |
+        $x = 16;
+    // | Criando a função com parametro por referência, ou seja,      |
+    // | o que acontecer dentro da função com a variável se extende   |
+    // | ao escopo da variável fora da função                         |
+        function trocarValor(&$y) {
+            $y += 16;
+            return $y;
+        }
+    // | Exibindo-as                                                  |
+        echo $x.$pl;
+        echo trocarValor($x).$pl;
+        echo trocarValor($x).$pl;
+        echo trocarValor($x).$pl.$hr;
+    // | Outro exemplo                                                |
+        $oquetoca = array(
+            'nome' => 'Marcel',
+            'idade' => 31,
+            'instrumento' => 'bateria' 
+        );
+        var_dump($oquetoca);
+        echo $hr;
+    // | com foreach                                                  |
+        foreach ($oquetoca as &$valor) {
+            if (gettype($valor) === 'integer') $valor +=2;
+            echo $valor.$pl;
+        }
+        echo $hr;
+    // └--------------------------------------------------------------┘
+// -------------------------------------------------------------------┘
+
+// -Novidades PHP7----------------------------------------------------┐
+    // ┌--------------------------------------------------------------┐
+    // |    Novidades PHP7                                            |
+    // | # poder determinar o tipo do parâmetro                       |
+    // | # poder dizer o tipo de retorno                              |
+    // | Exemplos                                                     |
+    // | Criando a função                                             |
+        function soma(int ...$valores) {
+            return array_sum($valores);
+        }
+    // | utilizando-a                                                 |
+        echo soma(2, 6).$pl;
+        echo soma(2,4,8,16).$pl.$hr;
+    // | outro exemplo com tipo de retorno agora                      |
+        function usandoResComoString(int ...$valores):string {
+            return array_sum($valores);
+        }
+    // | Exibindo                                                     |
+        var_dump(usandoResComoString(2,4,8,16,32,64));
+        echo $hr;
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
 ?>
