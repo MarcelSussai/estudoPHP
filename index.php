@@ -39,7 +39,8 @@
         // require 'source/variaveis.php';
         // include 'source/operadores.php';
         // include 'source/strings.php';
-        include 'source/estruturas_de_controle.php';
+        // include 'source/estruturas_de_controle.php';
+        include 'source/arrays.php';
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
 
