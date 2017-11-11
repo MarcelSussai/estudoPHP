@@ -43,7 +43,8 @@
         // include 'source/arrays.php';
         // include 'source/constantes.php';
         // include 'source/sessoes.php';
-        include 'source/funcoes.php';
+        // include 'source/funcoes.php';
+        include 'source/datas.php';
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
 
