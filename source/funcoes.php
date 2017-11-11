@@ -103,4 +103,80 @@ require_once 'var_util.php';
         echo $hr;
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
+
+// -Funções recursivas------------------------------------------------┐
+    // ┌--------------------------------------------------------------┐
+    // |    Funções recursivas                                        |
+        $h = array(
+            array(
+                'nome_cargo' => 'CEO',
+                'subordinados' => array (
+                    // inicio 01                                      |
+                    array(
+                        'nome_cargo' => 'Diretor Comercial',
+                        'subordinados' => array(
+                            // inicio 02                              |
+                            array(
+                                'nome_cargo' => 'Gerente de Vendas'
+                            )
+                            // fim 02                                 |
+                        )
+                    ),
+                    // fim 01                                         |
+                    // inicio 03                                      |
+                    array(
+                        'nome_cargo' => 'Diretor Financeiro',
+                        'subordinados' => array(
+                            // inicio 04                              |
+                            array(
+                                'nome_cargo' => 'Gerente de Contas',
+                                'subordinados' => array(
+                                    // inicio 05                      |
+                                    array(
+                                        'nome_cargo' => 'Supervisor'
+                                    )
+                                    // fim 05                         |
+                                )
+                            ),
+                            // fim 04                                 |
+                            // inicio 06                              |
+                            array(
+                                'nome_cargo' => 'Gerente de Compras',
+                                'subordinados' => array(
+                                    // inicio 07                      |
+                                    array(
+                                        'nome_cargo' => 'Suprimentos'
+                                    )
+                                    // fim 07                         |
+                                )
+                            )
+                            // fim 06                                 |
+                        )
+                    )
+                    // fim 03                                         |
+                )
+            )
+        );
+    // | Função recursiva                                             |
+        function exibir($h) {
+            $html = '<ul>';
+
+            foreach ($h as $cargo) {
+                $html .= "<li>";
+                $html .= $cargo['nome_cargo'];
+                if (isset($cargo['subordinados']) && 
+                    count($cargo['subordinados']) > 0) {
+                    $html .= exibir($cargo['subordinados']);
+                }
+                $html .= "</li>";
+            }
+
+            $html .= '</ul>';
+            return $html;
+
+        }
+        echo exibir($h);
+    // └--------------------------------------------------------------┘
+// -------------------------------------------------------------------┘
+
 ?>
