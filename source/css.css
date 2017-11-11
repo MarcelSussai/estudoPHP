@@ -1,14 +1,11 @@
 body {
     background: #F0F0F0;
     color: #303030;
-    padding: 64px 256px;
     font-size: 18px;
+    margin: 0;
+    padding: 64px;
 }
-.link1 {
-    text-decoration: none;
-    color:#0c3f10;
-    padding: 4px;
-}
-.link1:hover {
-    background: #69778a;
+#conteudo {
+    margin: 0 auto;
+    width: 80%;
 }
