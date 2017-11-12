@@ -7,6 +7,7 @@ require_once 'var_util.php';
     // | Constantes são valores que não variam                        |
     // | Definindo constantes                                         |
         define("NOMEDACONSTANTE", "Valor da constante");
+    // |--------------------------------------------------------------|
     // | Exemplo                                                      |
         define("ENDERECO", "www.marcelsussai.com");
         echo ENDERECO.$hr;
@@ -20,6 +21,7 @@ require_once 'var_util.php';
             '1234',
             'test'
         ]);
+    // |--------------------------------------------------------------|
     // | Exibindo                                                     |
         var_dump(BD);
         print_r(BD);

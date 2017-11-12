@@ -1,6 +1,7 @@
 <?php
 require_once 'var_util.php';
-// -------------------------------------------------------------------┐
+
+// -Sessões-----------------------------------------------------------┐
     // ┌--------------------------------------------------------------┐
     // |    Sessões                                                   |
     // | O que são sessões                                            |
@@ -18,13 +19,16 @@ require_once 'var_util.php';
     // |    Variáveis de sessão                                       |
     // | para iniciar a sessão:                                       |
         session_start();
+    // |--------------------------------------------------------------|
     // | para guardar informações na sessão                           |
         $_SESSION["nome"] = "Marcel";
         $_SESSION["sobrenome"] = "Sussai";
+    // |--------------------------------------------------------------|
     // | para criar o link para a exibição da sessão                  |
         $linkEx01 = "<a class='link1' href='source"
                     .DIRECTORY_SEPARATOR
                     ."sessoes_ex_01.php'>Exemplo 01</a>".$hr;
+    // |--------------------------------------------------------------|
     // | Exibindo                                                     |
         echo $linkEx01;
         echo session_id().$hr;
