@@ -10,7 +10,6 @@ require_once 'var_util.php';
         $idadeC = 12;
         $idadeA = 18;
         $idadeI = 60;
-
     // |--------------------------------------------------------------|
     // | Realizando o if()                                            |
     // | se a resposta da idade for menor ou igual a idade da criança |
@@ -46,7 +45,7 @@ require_once 'var_util.php';
     // | validar coisas simples como a escrita de um texto            |
     // | chamado de operador ternário                                 |
     // | Exemplo:                                                     |
-        echo ($idadeR < $idadeA)?"Menor de idade":"Maior de idade".$pl.$hr;
+        echo ($idadeR < $idadeA)?"Menor de idade":"Maior de idade".$hr;
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
 

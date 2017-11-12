@@ -218,12 +218,146 @@ require_once 'var_util.php';
     // |--------------------------------------------------------------|
     // | %b                                                           |
     // | Nome do mês abreviado, baseado no idioma                     |
-        echo $s1."Número da semana: ".$s2;
+        echo $s1."Nome do mês: ".$s2;
         echo strftime("%b").$pl;
     // |--------------------------------------------------------------|
-
-
-
+    // | %B                                                           |
+    // | Nome completo do mês, baseado no idioma                      |
+        echo $s1."Nome do mês: ".$s2;
+        echo strftime("%B").$pl;
+    // |--------------------------------------------------------------|
+    // | %h                                                           |
+    // | Nome abreviado do mês, baseado no idioma                     |
+        echo $s1."Nome do mês: ".$s2;
+        echo strftime("%h").$pl;
+    // |--------------------------------------------------------------|
+    // | %m                                                           |
+    // | Representação de dois dígitos do més                         |
+        echo $s1."Número do mês: ".$s2;
+        echo strftime("%m").$pl;
+    // |--------------------------------------------------------------|
+    // | %C                                                           |
+    // | Representação, 2 dígitos, do século                          |
+    // | (ano dividido por 100, truncado como inteiro)                |
+        echo $s1."Número do século: ".$s2;
+        echo strftime("%C").$pl;
+    // |--------------------------------------------------------------|
+    // | %g                                                           |
+    // | Ano, 2 dígitos - ISO-8601:1988                               |
+        echo $s1."Ano: ".$s2;
+        echo strftime("%g").$pl;
+    // |--------------------------------------------------------------|
+    // | %G                                                           |
+    // | Versão de 4 dígitos de %g                                    |
+        echo $s1."Ano: ".$s2;
+        echo strftime("%G").$pl;
+    // |--------------------------------------------------------------|
+    // | %y                                                           |
+    // | Ano, 2 dítos                                                 |
+        echo $s1."Ano: ".$s2;
+        echo strftime("%y").$pl;
+    // |--------------------------------------------------------------|
+    // | %Y                                                           |
+    // | Ano, 4 dígitos                                               |
+        echo $s1."Ano: ".$s2;
+        echo strftime("%Y").$pl;
+    // |--------------------------------------------------------------|
+    // | %H                                                           |
+    // | Hora, 2 dígitos, 24 horas                                    |
+        echo $s1."Hora: ".$s2;
+        echo strftime("%H").$pl;
+    // |--------------------------------------------------------------|
+    // | %k                                                           |
+    // | Hora, 2 dígitos, 24 horas, espaço depois em que é 1 digito   |
+        echo $s1."Hora: ".$s2;
+        echo strftime("%k").$pl;
+    // |--------------------------------------------------------------|
+    // | %I                                                           |
+    // | Hora, 2 dígitos, 12 horas                                    |
+        echo $s1."Hora: ".$s2;
+        echo strftime("%I").$pl;
+    // |--------------------------------------------------------------|
+    // | %l                                                           |
+    // | Hora, 2 dígitos, 12 horas, espaço depois em que é 1 digito   |
+        echo $s1."Hora: ".$s2;
+        echo strftime("%l").$pl;
+    // |--------------------------------------------------------------|
+    // | %M                                                           |
+    // | minutos, 2 dígitos                                           |
+        echo $s1."Minutos: ".$s2;
+        echo strftime("%M").$pl;
+    // |--------------------------------------------------------------|
+    // | %p                                                           |
+    // | AM ou PM                                                     |
+        echo $s1."dia ou noite ".$s2;
+        echo strftime("%p").$pl;
+    // |--------------------------------------------------------------|
+    // | %P                                                           |
+    // | am ou pm                                                     |
+        echo $s1."dia ou noite ".$s2;
+        echo strftime("%P").$pl;
+    // |--------------------------------------------------------------|
+    // | %r                                                           |
+    // | O mesmo que "%I:%M:%S %p"                                    |
+        echo $s1."Horas: ".$s2;
+        echo strftime("%r").$pl;
+    // |--------------------------------------------------------------|
+    // | %R                                                           |
+    // | O mesmo que "%H:%M"                                          |
+        echo $s1."Horas: ".$s2;
+        echo strftime("%R").$pl;
+    // |--------------------------------------------------------------|
+    // | %S                                                           |
+    // | Segundos, 2 digitos                                          |
+        echo $s1."Segundos: ".$s2;
+        echo strftime("%S").$pl;
+    // |--------------------------------------------------------------|
+    // | %T                                                           |
+    // | O mesmo que "%I:%M:%S"                                       |
+        echo $s1."Horas: ".$s2;
+        echo strftime("%T").$pl;
+    // |--------------------------------------------------------------|
+    // | %X                                                           |
+    // | baseada no idioma sem a data                                 |
+        echo $s1."Horas: ".$s2;
+        echo strftime("%X").$pl;
+    // |--------------------------------------------------------------|
+    // | %z                                                           |
+    // | Deslocamento fuso horário                                    |
+        echo $s1."Desl Fuso: ".$s2;
+        echo strftime("%z").$pl;
+    // |--------------------------------------------------------------|
+    // | %Z                                                           |
+    // |Abreviação fuso horário                                       |
+        echo $s1."Fuso: ".$s2;
+        echo strftime("%Z").$pl;
+    // |--------------------------------------------------------------|
+    // | %c                                                           |
+    // | Carimbo de data e hora                                       |
+        echo $s1."data e hora: ".$s2;
+        echo strftime("%c").$pl;
+    // |--------------------------------------------------------------|
+    // | %D                                                           |
+    // | Mes dia e ano                                                |
+        echo $s1."M~es dia ano: ".$s2;
+        echo strftime("%D").$pl;
+    // |--------------------------------------------------------------|
+    // | %F                                                           |
+    // | ano mes dia                                                  |
+        echo $s1."Ano mês dia: ".$s2;
+        echo strftime("%F").$pl;
+    // |--------------------------------------------------------------|
+    // | %s                                                           |
+    // | Timestump UNIX                                               |
+        echo $s1."Timestump UNIX: ".$s2;
+        echo strftime("%s").$pl;
+    // |--------------------------------------------------------------|
+    // | %x                                                           |
+    // | data                                                         |
+        echo $s1."data: ".$s2;
+        echo strftime("%r").$pl;
+    // |--------------------------------------------------------------|
+    // | %n uma nova linha | %t tab | %% porcento                     |
     // └--------------------------------------------------------------┘
 
 // -------------------------------------------------------------------┘
