@@ -88,6 +88,9 @@ require_once 'var_util.php';
         echo date("r").$pl;
     // | U = segundos desde Unix Epoch                                |
         echo date("U").$hr;
+    // └--------------------------------------------------------------┘
+
+    // ┌--------------------------------------------------------------┐
     // | Timestamp                                                    |
         echo time().$hr; // a partir de 1970                          |
     // | variavel com strtotime()                                     |
@@ -113,7 +116,33 @@ require_once 'var_util.php';
     // └--------------------------------------------------------------┘
 
     // ┌--------------------------------------------------------------┐
-    // |                                          |
+    // |    SetLocale                                                 |
+    // | mudando a localização para portugues                         |
+        setlocale(LC_ALL,"pt_BR", "pt_BR.utf-8", "portuguese");
+    // | %a                                                           |
+    // | Representação textual abreviada do dia                       |
+        echo $s1."dia: ".$s2;
+        echo strftime("%a").$pl;
+    // | %A                                                           |
+    // | Representação textual completa do dia	                      |
+        echo $s1."dia: ".$s2;
+        echo strftime("%A").$pl;
+    // | %d                                                           |
+    // | Dia do mês, com dois dígitos (com zeros à esquerda)          |
+        echo $s1."dia do mês: ".$s2;
+        echo strftime("%d").$pl;
+    // | %e                                                           |
+    // | Dia do mês com um dígito, precedido com um espaço...         |
+        echo $s1."dia do mês: ".$s2;
+        echo strftime("%e").$pl;
+    // | %j                                                           |
+    // | dia do ano com três dígitos e zeros à esquerda               |
+        echo $s1."dia do ano: ".$s2;
+        echo strftime("%j").$pl;
+    // |                                         |
+
+
+
 
     // └--------------------------------------------------------------┘
 
