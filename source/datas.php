@@ -119,30 +119,53 @@ require_once 'var_util.php';
     // |    SetLocale                                                 |
     // | mudando a localização para portugues                         |
         setlocale(LC_ALL,"pt_BR", "pt_BR.utf-8", "portuguese");
+    // | strftime()                                                   |
+    // |--------------------------------------------------------------|
     // | %a                                                           |
     // | Representação textual abreviada do dia                       |
         echo $s1."dia: ".$s2;
         echo strftime("%a").$pl;
+    // |--------------------------------------------------------------|
     // | %A                                                           |
     // | Representação textual completa do dia	                      |
         echo $s1."dia: ".$s2;
         echo strftime("%A").$pl;
+    // |--------------------------------------------------------------|
     // | %d                                                           |
     // | Dia do mês, com dois dígitos (com zeros à esquerda)          |
         echo $s1."dia do mês: ".$s2;
         echo strftime("%d").$pl;
+    // |--------------------------------------------------------------|
     // | %e                                                           |
     // | Dia do mês com um dígito, precedido com um espaço...         |
         echo $s1."dia do mês: ".$s2;
         echo strftime("%e").$pl;
+    // |--------------------------------------------------------------|
     // | %j                                                           |
     // | dia do ano com três dígitos e zeros à esquerda               |
         echo $s1."dia do ano: ".$s2;
         echo strftime("%j").$pl;
-    // |                                         |
-
-
-
+    // |--------------------------------------------------------------|
+    // | %u                                                           |
+    // | Representação numérica, do dia da semana / ISO-8601          |
+        echo $s1."dia da semana: ".$s2;
+        echo strftime("%u").$pl;
+    // |--------------------------------------------------------------|
+    // | %w                                                           |
+    // | Representação numérida do dia da semana                      |
+        echo $s1."dia da semana: ".$s2;
+        echo strftime("%w").$pl;
+    // |--------------------------------------------------------------|
+    // | %U                                                           |
+    // | Número da semana de um dado ano, iniciado com o primeiro     |
+    // | domingo sendo a primeira semana                              |
+        echo $s1."Número da semana: ".$s2;
+        echo strftime("%U").$pl;
+    // |--------------------------------------------------------------|
+    // | %V                                                           |
+    // | Número da semana, / ISO-8601:1988                            |
+        echo $s1."Número da semana: ".$s2;
+        echo strftime("%V").$pl;
 
     // └--------------------------------------------------------------┘
 
