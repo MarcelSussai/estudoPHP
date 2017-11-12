@@ -205,8 +205,24 @@ require_once 'var_util.php';
     // |--------------------------------------------------------------|
     // | %V                                                           |
     // | Número da semana, / ISO-8601:1988                            |
+    // | de um dado ano, iniciada com a primeira semana do ano        |
+    // | segunda feira como inicio                                    |
         echo $s1."Número da semana: ".$s2;
         echo strftime("%V").$pl;
+    // |--------------------------------------------------------------|
+    // | %W                                                           |
+    // | representação numérica da semana do ano, começando pela      |
+    // | primeira segunda feira como primeira semana                  |
+        echo $s1."Número da semana: ".$s2;
+        echo strftime("%W").$pl;
+    // |--------------------------------------------------------------|
+    // | %b                                                           |
+    // | Nome do mês abreviado, baseado no idioma                     |
+        echo $s1."Número da semana: ".$s2;
+        echo strftime("%b").$pl;
+    // |--------------------------------------------------------------|
+
+
 
     // └--------------------------------------------------------------┘
 
