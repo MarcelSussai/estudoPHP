@@ -3,7 +3,7 @@ require_once 'var_util.php';
 // -Datas-------------------------------------------------------------┐
     // ┌--------------------------------------------------------------┐
     // |    Datas                                                     |
-        echo date("d/m/Y").$pl.$hr;
+        echo date("d/m/Y - H:i:s").$pl.$hr;
     // | d = dia do mês, 2 digítos com zero à esquerda                |
         echo date("d").$pl;
     // | D = Uma representação textual de um dia, 3 letras            |
@@ -55,9 +55,9 @@ require_once 'var_util.php';
         echo date("g").$pl;
     // | G = Formato 24-horas de uma hora sem zero à esquerda         |
         echo date("G").$pl;
-    // | h = Formato 12-horas de uma hora sem zero à esquerda         |
+    // | h = Formato 12-horas de uma hora com zero à esquerda         |
         echo date("h").$pl;
-    // | H = Formato 24-horas de uma hora sem zero à esquerda         |
+    // | H = Formato 24-horas de uma hora com zero à esquerda         |
         echo date("H").$pl;
     // | i = minutos com zero à esquerda                              |
         echo date("i").$pl;
@@ -87,11 +87,35 @@ require_once 'var_util.php';
     // | r = data formatada RFC 2822                                  |
         echo date("r").$pl;
     // | U = segundos desde Unix Epoch                                |
-        echo date("U").$pl.$hr;
+        echo date("U").$hr;
+    // | Timestamp                                                    |
+        echo time().$hr; // a partir de 1970                          |
+    // | variavel com strtotime()                                     |
+        $ts1 = strtotime("2012-12-30");
+    // | Exibindo                                                     |
+        echo $ts1;
+        var_dump($ts1);
+        print_r($ts1);
+        echo $pl;
+        echo date("l, d/m/Y", $ts1).$hr;
+    // | outro exemplo                                                |
+        $ts2 = strtotime("now");
+        $ts3 = strtotime("+1 day");
+        $ts4 = strtotime("+1 week");
+        $ts5 = strtotime("-2 hours");
+    // | Exibindo o timestamp                                         |
+        echo $ts2.$pl.$ts3.$pl.$ts4.$pl.$ts5.$hr;
+    // | formatando e exibindo novamente só que formatado             |
+        echo date("l, d/m/Y", $ts2).$pl;
+        echo date("l, d/m/Y", $ts3).$pl;
+        echo date("l, d/m/Y", $ts4).$pl;
+        echo date("l, d/m/Y", $ts5).$hr;
+    // └--------------------------------------------------------------┘
 
-
-
+    // ┌--------------------------------------------------------------┐
+    // |                                          |
 
     // └--------------------------------------------------------------┘
+
 // -------------------------------------------------------------------┘
 ?>
