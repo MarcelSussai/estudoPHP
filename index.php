@@ -3,7 +3,7 @@
 // -Começo------------------------------------------------------------┐
     // ┌--------------------------------------------------------------┐
     // |    Variaveis úteis                                           |
-        require_once 'source/var_util.php';
+        require_once 'var_util.php';
     // |--------------------------------------------------------------|
     // | Cabeçalho, começo da página                                  |
         include_once 'source/head.php';
@@ -54,6 +54,7 @@
         // include 'source/sessoes.php';
         // include 'source/funcoes.php';
         // include 'source/datas.php';
+        include 'source/POO/OrientaObjeto.php';
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
 

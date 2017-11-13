@@ -1,5 +1,5 @@
 <?php
-require_once '../../var_util.php';
+require_once './var_util.php';
 
 // -Orientação a objetos----------------------------------------------┐
     // ┌--------------------------------------------------------------┐
@@ -37,7 +37,32 @@ require_once '../../var_util.php';
     // |    a carga ou qualquer estado de caracteristicas             |
     // |    mutáveis                                                  |
     // |--------------------------------------------------------------|
-
+    // | requerindo a classe caneta                                   |
+        require_once 'caneta.php';
+    // | Criando o Objeto caneta                                      |
+        $c1 = new Caneta;
+        $c1->cor = "azul";
+        $c1->ponta = 0.5;
+        $c1->modelo = "BIC";
+        $c1->tampada = true;
+    // |--------------------------------------------------------------|
+    // | Mostrando o Estado                                           |
+        var_dump($c1);
+        print_r($c1);
+        echo $hr;
+    // |--------------------------------------------------------------|
+    // | Utilizando um método da classe                               |
+        echo $c1->escrever("Estou escrevendo").$pl;
+        $c1->destampar();
+        echo $c1->escrever("Agora Estou escrevendo").$hr;
+    // |--------------------------------------------------------------|
+    // | Criando outra instancia, outro objeto                        |
+        $c2 = new Caneta;
+        $c2->cor = "verde";
+        $c2->ponta = 1.0;
+        $c2->modelo = "TENFON";
+        $c2->tampada = "true";
+        var_dump($c2);
 
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
