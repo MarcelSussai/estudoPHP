@@ -53,7 +53,7 @@
         // include 'source/constantes.php';
         // include 'source/sessoes.php';
         // include 'source/funcoes.php';
-        include 'source/datas.php';
+        // include 'source/datas.php';
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
 
