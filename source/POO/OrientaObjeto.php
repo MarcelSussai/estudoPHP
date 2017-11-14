@@ -62,19 +62,18 @@ require_once './var_util.php';
     // |    a carga ou qualquer estado de caracteristicas             |
     // |    mutáveis                                                  |
     // |--------------------------------------------------------------|
+    // | Métodos especiais                                            |
+    // |    Métodos Acessores (getters)                               |
+    // |    Métodos Modificadores (setters)                           |
+    // |    Métodos Construtores ()                                   |
+    // |--------------------------------------------------------------|
     // | requerindo a classe caneta                                   |
         require_once 'caneta.php';
     // | Criando o Objeto caneta                                      |
-        $c1 = new Caneta;
-        $c1->cor = "azul";
-        $c1->modelo = "BIC";
-        $c1->tampar();
+        $c1 = new Caneta("BIC",0.5);
     // |--------------------------------------------------------------|
-    // | Mostrando o Estado                                           |
-        var_dump($c1);
-        echo $f1;
-        print_r($c1);
-        echo $f2.$hr;
+    // | Exibindo o objeto                                            |
+        mostrarEstado($c1);
     // |--------------------------------------------------------------|
     // | Utilizando um método da classe                               |
         echo $c1->escrever("Estou escrevendo").$pl;
@@ -82,21 +81,16 @@ require_once './var_util.php';
         echo $c1->escrever("Agora Estou escrevendo").$hr;
     // |--------------------------------------------------------------|
     // | Criando outra instancia, outro objeto                        |
-        $c2 = new Caneta;
-        $c2->cor = "verde";
-        $c2->modelo = "TENFON";
-        $c2->tampar();
+        $c2 = new Caneta("COMPACTOR", 1.0,"verde");
     // |--------------------------------------------------------------|
-    // | Exibindo o objeto mais duas vezes                            |
-        var_dump($c2);
-        echo $hr;
-        echo $f1;
-        print_r($c2);
-        echo $f2;
+    // | Exibindo o objeto                                            |
+        mostrarEstado($c2);
     // |--------------------------------------------------------------|
     // | Rabiscando com o objeto caneta                               |
         $c2->destampar();
         $c2->rabiscar(16);
+    // |--------------------------------------------------------------|
+
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
 
