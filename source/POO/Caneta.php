@@ -3,26 +3,50 @@
     // ┌--------------------------------------------------------------┐
     // |    Criando a classe                                          |
     class Caneta {
-        // Criando os atributos                                       |
-        var $modelo;
-        var $cor;
-        var $ponta;
-        var $carga;
-        var $tampada;
-        // Criando os métodos                                         |
-        function escrever($txt) {
+    // |--------------------------------------------------------------|
+    // | Criando os atributos                                         |
+        public $modelo;
+        public $cor;
+        private $ponta;
+        protected $carga;
+        protected $tampada;
+    // |--------------------------------------------------------------|
+    // |    Criando os métodos                                        |
+    // |--------------------------------------------------------------|
+    // | escrever($txt)                                               |
+        public function escrever($txt) {
             if ($this->tampada == true) {
                 return "Caneta tampada, destampe-a para usar ";
             } else {
                 return "<strong><i>".$txt."</i></strong>";
             }
         }
-        function tampar() {
+    // |--------------------------------------------------------------|
+    // | rabiscar()                                                   |
+        public function rabiscar($nv) {
+            if ($this->tampada) {
+                return "Caneta tampada, destampe-a para usar ";
+            } else {
+                echo "<strong><i>";
+                for ($i=1; $i <= $nv; $i++) { 
+                    echo "_";
+                }
+                echo "</i></strong>";
+            }
+        }
+    // |--------------------------------------------------------------|
+    // | tampar()                                                     |
+        public function tampar() {
             $this->tampada = true;
         }
-        function destampar() {
-            $this->tampada = false;            
+    // |--------------------------------------------------------------|
+    // | destampar()                                                  |
+        public function destampar() {
+            $this->tampada = false;
         }
-    }
+    // |--------------------------------------------------------------|
+
+
+}
 
 ?>

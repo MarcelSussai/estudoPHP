@@ -10,8 +10,11 @@
     // |--------------------------------------------------------------|
     // | Antes, um olá mundo .... :)                                  |
     // |    Olá Mundo!                                                |
-        echo "Hello World - Olá Mundo ! Estudo!";
-        echo $pl.$hr;
+        echo "Hello World - Olá Mundo ! Estudo!".$pl;
+        echo "Os comentários e a forma em que o código é identado
+              é apenas para fins didáticos, em produção utilizo outra
+              estrutura de comentário/código/resultado";
+        echo $hr;
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
 

@@ -11,6 +11,31 @@ require_once './var_util.php';
     // | são instâncias de uma classe                                 |
     // | Um objeto possui caracteristicas, comportamentos e estados   |
     // |--------------------------------------------------------------|
+    // |    Visibilidade de um Objeto                                 |
+    // | (+)    Publico                                               |
+    // |            A classe atual e todas as outras classes          |
+    // | (-)    Privado                                               |
+    // |            Somente a classe atual                            |
+    // | (#)    Protegido                                             |
+    // |            A classe atual e todas suas subclasses            |
+    // |--------------------------------------------------------------|
+    // | Diagrama de classes                                          |
+    // ┌======================================┐                       |
+    // |    Caneta                            |                       |
+    // |======================================|                       |
+    // |  (+)   modelo                        |                       |
+    // |  (+)   cor                           |                       |
+    // |  (-)   ponta                         |                       |
+    // |  (#)   carga                         |                       |
+    // |  (#)   tampada                       |                       |
+    // |======================================|                       |
+    // |  (+)   escrever()                    |                       |
+    // |  (+)   rabiscar()                    |                       |
+    // |  (+)   pintar()                      |                       |
+    // |  (+)   tampar()                      |                       |
+    // |  (+)   destampar()                   |                       |
+    // └======================================┘                       |
+    // |--------------------------------------------------------------|
     // | Exemplo de um objeto                                         |
     // | Caneta                                                       |
     // |--------------------------------------------------------------|
@@ -42,9 +67,9 @@ require_once './var_util.php';
     // | Criando o Objeto caneta                                      |
         $c1 = new Caneta;
         $c1->cor = "azul";
-        $c1->ponta = 0.5;
+        // $c1->ponta = 0.5;
         $c1->modelo = "BIC";
-        $c1->tampada = true;
+        // $c1->tampada = true;
     // |--------------------------------------------------------------|
     // | Mostrando o Estado                                           |
         var_dump($c1);
@@ -53,17 +78,23 @@ require_once './var_util.php';
     // |--------------------------------------------------------------|
     // | Utilizando um método da classe                               |
         echo $c1->escrever("Estou escrevendo").$pl;
-        $c1->destampar();
+        // $c1->destampar();
         echo $c1->escrever("Agora Estou escrevendo").$hr;
     // |--------------------------------------------------------------|
     // | Criando outra instancia, outro objeto                        |
         $c2 = new Caneta;
         $c2->cor = "verde";
-        $c2->ponta = 1.0;
         $c2->modelo = "TENFON";
-        $c2->tampada = "true";
+    // |--------------------------------------------------------------|
+    // | Exibindo o objeto mais duas vezes                            |
         var_dump($c2);
-
+        echo $hr;
+        echo $f1;
+        print_r($c2);
+        echo $f2;
+    // |--------------------------------------------------------------|
+    // | Rabiscando com o objeto caneta                               |
+        $c2->rabiscar(16);
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
 
