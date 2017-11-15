@@ -58,7 +58,7 @@
         // include 'source/funcoes.php';
         // include 'source/datas.php';
         // include 'source/POO/OrientaObjeto.php';
-        include 'source/POO/Banco/exibindo.php';
+        include 'source/POO/Definicao.php';
     // └--------------------------------------------------------------┘
 // -------------------------------------------------------------------┘
 
