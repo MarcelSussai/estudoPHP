@@ -1,28 +1,33 @@
 <?php
-require_once './var_util.php';
+// ────────────────────────────────────────────────────────────────────────────────────────────────┐
+  // requerimentos básicos
+    require_once './var_util.php';
+// ────────────────────────────────────────────────────────────────────────────────────────────────┘
 
-// -Variáveis---------------------------------------------------------┐
-    // ┌--------------------------------------------------------------┐
-    // |    Variáveis                                                 |
-    // | Variáveis são espaços na memória para guardar valores        |
-    // | que nomeamos assim                                           |
+// ────────────────────────────────────────────────────────────────────────────────────────────────┐
+//  Variáveis
+  // ┌─────────────────────────────────────────────────────────────────────────────────────────────┐
+  /*    Variáveis são espaços na memória para guardar valores que nomeamos assim
+   */
         $nome_variavel = "Conteudo da Variavel";
-    // |--------------------------------------------------------------|
-    // | No exemplo é do tipo string que também pode ser feito com    |
-    // | Aspas simples assim                                          |
+  // |─────────────────────────────────────────────────────────────────────────────────────────────|
+  /*    No exemplo é do tipo string que também pode ser feito com Aspas simples assim
+   */
         $variavel_str_aspas_simples = 'Aspas Simples'; 
-    // |--------------------------------------------------------------|
-    // | No PHP o tipo da variável é implicito no conteúdo, ou seja,  |
-    // | ela não precisa ser especificada                             |
+  // |─────────────────────────────────────────────────────────────────────────────────────────────|
+  /*    No PHP o tipo da variável é implicito no conteúdo, ou seja, ela não precisa 
+   *    ser especificada
+   */
         $variavel_numeros_inteiros = 32;
         $variavel_boolean = true;
         $variavel_texto = "Este é um texto exemplar! rs";
-    // |--------------------------------------------------------------|
-    // | etc...                                                       |
-    // | Portanto PHP é fracamente tipada.                            |
-    // | Para exibir a váriavel utilizamos o comando echo             |
+  // |─────────────────────────────────────────────────────────────────────────────────────────────|
+  /*    Portanto PHP é fracamente tipada.
+   *    Para exibir a váriavel utilizamos o comando echo
+   */
         echo $nome_variavel.$pl;
         echo $variavel_str_aspas_simples.$pl.$hr;
+  // |─────────────────────────────────────────────────────────────────────────────────────────────|
     // |--------------------------------------------------------------|
     // | como mostrar detalhes do tipo da variável com var_dump       |
         var_dump($variavel_boolean);
@@ -67,7 +72,7 @@ require_once './var_util.php';
     // | (array) - converte para array                                |
     // | (object) - converte para objeto                              |
     // └--------------------------------------------------------------┘
-// -------------------------------------------------------------------┘
+// ────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 // -Tipos básicos-----------------------------------------------------┐
     // ┌--------------------------------------------------------------┐

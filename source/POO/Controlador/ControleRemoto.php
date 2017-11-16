@@ -9,7 +9,8 @@
 
   // ┌─────────────────────────────────────────────────────────────────────────────────────────────┐
   //    ControleRemoto Atributos    {
-    /*  Iniciando a classe e criando os atributos    */
+  /*  Iniciando a classe e criando os atributos    
+   */
     class ControleRemoto implements Controlador {
         private $volume;
         private $ligado;
