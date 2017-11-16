@@ -1,6 +1,6 @@
 <?php
 // ────────────────────────────────────────────────────────────────────────────────────────────────┐
-//  Iniciando a Classe:
+//  Iniciando a Classe Lutador:
     class Lutador {
   // ┌─────────────────────────────────────────────────────────────────────────────────────────────┐
   /*    Criando os Atributos
@@ -8,12 +8,9 @@
         private $nome;
         private $nacionalidade;
         private $idade;
-        private $altura;
-        private $peso;
+        private $altura, $peso;
         private $categoria;
-        private $vitorias;
-        private $derrotas;
-        private $empates;
+        private $vitorias, $derrotas, $empates;
   // └─────────────────────────────────────────────────────────────────────────────────────────────┘
 
   // ┌─────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -127,7 +124,6 @@
             $this->setVitorias($vit);
             $this->setDerrotas($der);
             $this->setEmpates($emp);
-
         }
   // └─────────────────────────────────────────────────────────────────────────────────────────────┘
 
@@ -139,24 +135,36 @@
         public function apresentar() {
           //───────────────────────────────────────────────────────────────────────────────────────┐
             $pl = "<br>\n";
-            $lin1 = $pl."──────────────────────────────────".$pl;
-            $lin2 = "Nome do lutador: ".$this->getNome().$pl;
-            $lin3 = "Origem: ".$this->getNacionalidade().$pl;
-            $lin4 = "Idade: ".$this->getIdade().$pl;
-            $lin5 = "Altura: ".$this->getAltura().$pl;
-            $lin6 = "Pesando: ".$this->getPeso()." Kg".$pl;
-            $lin7 = "Ganhou: ".$this->getVitorias().$pl;
-            $lin8 = "Perdeu: ".$this->getDerrotas().$pl;
-            $lin9 = "Empatou: ".$this->getEmpates().$pl;
-            $lin10 = "─────────────────────────────────";
+            $f1 = "<strong>";
+            $f2 = "</strong>";
+            $lin = $pl."──────────────────────────────────────────────────────────".$pl;
+            $lin .= $f1."Lutador: ".$f2.$this->getNome().$pl;
+            $lin .= $f1."Origem: ".$f2.$this->getNacionalidade().$pl;
+            $lin .= $f1."Idade: ".$f2.$this->getIdade().$pl;
+            $lin .= $f1."Altura: ".$f2.$this->getAltura().$pl;
+            $lin .= $f1."Pesando: ".$f2.$this->getPeso()." Kg".$pl;
+            $lin .= $f1."Ganhou: ".$f2.$this->getVitorias().$pl;
+            $lin .= $f1."Perdeu: ".$f2.$this->getDerrotas().$pl;
+            $lin .= $f1."Empatou: ".$f2.$this->getEmpates().$pl;
           // └─────────────────────────────────────────────────────────────────────────────────────┘
-            echo $lin1.$lin2.$lin3,$lin4.$lin5.$lin6.$lin7.$lin8.$lin9.$lin10;
+            echo $lin;
         }
 
   // |─────────────────────────────────────────────────────────────────────────────────────────────|
-  /*    Método status()
+  /*    Método estado()
    */
-
+        public function estado() {
+            $pl = "<br>\n";
+            $f1 = "<strong>";
+            $f2 = "</strong>";
+            $lin = $pl."──────────────────────────────────────────────────────────".$pl;
+            $lin .= $f1.$this->getNome().$f2." é um peso "
+                    .$f1.$this->getCategoria().$f2." e já ganhou "
+                    .$f1.$this->getVitorias().$f2." vezes, perdeu "
+                    .$f1.$this->getDerrotas().$f2." vezes e empatou "
+                    .$f1.$this->getEmpates().$f2;
+            echo $lin;
+        } 
 
   // |─────────────────────────────────────────────────────────────────────────────────────────────|
   /*    Método ganharLuta()
