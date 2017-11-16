@@ -58,6 +58,7 @@
   //    Set peso
         public function setPeso($v) {
             $this->peso = $v;
+            $this->setCategoria();
         }
   //    Get peso
         public function getPeso() {
@@ -65,8 +66,19 @@
         }
   // |─────────────────────────────────────────────────────────────────────────────────────────────|
   //    Set categoria
-        public function setCategoria($v) {
-            $this->categoria = $v;
+        private function setCategoria() {
+            if ($this->getPeso() < 52.2) {
+                $this->categoria = "Inválido";
+            } else if ($this->getPeso() <= 70.3) {
+                $this->categoria = "Leve";
+            } else if ($this->getPeso() <= 83.9) {
+                $this->categoria = "Médio";
+            } else if ($this->getPeso() <= 120.2) {
+                $this->categoria = "Pesado";
+            } else {
+                $this->categoria = "ForaDoPadrão";
+            }
+
         }
   //    Get categoria
         public function getCategoria() {
@@ -107,9 +119,16 @@
    *    $vit = vitorias, $der = derrotas, $emp = empates
    */
         public function __construct($nom, $nac, $ida, $alt, $pes, $vit, $der, $emp) {
+            $this->setNome($nom);
+            $this->setNacionalidade($nac);
+            $this->setIdade($ida);
+            $this->setAltura($alt);
+            $this->setPeso($pes);
+            $this->setVitorias($vit);
+            $this->setDerrotas($der);
+            $this->setEmpates($emp);
 
         }
-
   // └─────────────────────────────────────────────────────────────────────────────────────────────┘
 
   // ┌─────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -117,7 +136,22 @@
   // |─────────────────────────────────────────────────────────────────────────────────────────────|
   /*    Método apresentar()
    */
-
+        public function apresentar() {
+          //───────────────────────────────────────────────────────────────────────────────────────┐
+            $pl = "<br>\n";
+            $lin1 = $pl."──────────────────────────────────".$pl;
+            $lin2 = "Nome do lutador: ".$this->getNome().$pl;
+            $lin3 = "Origem: ".$this->getNacionalidade().$pl;
+            $lin4 = "Idade: ".$this->getIdade().$pl;
+            $lin5 = "Altura: ".$this->getAltura().$pl;
+            $lin6 = "Pesando: ".$this->getPeso()." Kg".$pl;
+            $lin7 = "Ganhou: ".$this->getVitorias().$pl;
+            $lin8 = "Perdeu: ".$this->getDerrotas().$pl;
+            $lin9 = "Empatou: ".$this->getEmpates().$pl;
+            $lin10 = "─────────────────────────────────";
+          // └─────────────────────────────────────────────────────────────────────────────────────┘
+            echo $lin1.$lin2.$lin3,$lin4.$lin5.$lin6.$lin7.$lin8.$lin9.$lin10;
+        }
 
   // |─────────────────────────────────────────────────────────────────────────────────────────────|
   /*    Método status()
@@ -127,17 +161,23 @@
   // |─────────────────────────────────────────────────────────────────────────────────────────────|
   /*    Método ganharLuta()
    */
-
+        public function ganharLuta() {
+            $this->setVitorias($this->getVitorias()+1);
+        }
 
   // |─────────────────────────────────────────────────────────────────────────────────────────────|
   /*    Método perderLuta()
    */
-
+        public function perderLuta() {
+            $this->setDerrotas($this->getDerrotas()+1);
+        }
 
   // |─────────────────────────────────────────────────────────────────────────────────────────────|
   /*    Método empatarLuta()
    */
-
+        public function empatarLuta() {
+            $this->setEmpates($this->getEmpates()+1);
+        }
 
 
 

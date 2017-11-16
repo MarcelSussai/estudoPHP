@@ -53,7 +53,7 @@
     // include 'source/funcoes.php';
     // include 'source/datas.php';
     // include 'source/POO/OrientaObjeto.php';
-    include 'source/POO/Controlador/Definicao.php';
+    include 'source/POO/Luta/definicao.php';
   // └─────────────────────────────────────────────────────────────────────────────────────────────┘
 // ────────────────────────────────────────────────────────────────────────────────────────────────┘
 
