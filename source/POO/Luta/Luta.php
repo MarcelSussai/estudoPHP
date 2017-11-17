@@ -61,13 +61,13 @@ require_once 'Lutador.php';
   //    marcarLuta()
         public function marcarLuta($l1,$l2) {
             if (($l1->getCategoria() === $l2->getCategoria())&&($l1 != $l2)) {
-                $this->aprovada = true;
-                $this->desafiado = $l1;
-                $this->desafiante = $l2;
+                $this->setAprovada(true);
+                $this->setDesafiado($l1);
+                $this->setDesafiante($l2);
             } else {
-                $this->aprovada = false;
-                $this->desafiado = null;
-                $this->desafiante = null;
+                $this->setAprovada(false);
+                $this->setDesafiado(null);
+                $this->setDesafiante(null);
             }
         }
   // └─────────────────────────────────────────────────────────────────────────────────────────────┘
