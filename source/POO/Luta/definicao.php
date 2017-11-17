@@ -37,22 +37,29 @@
    *    │ (+) lutar()                   │
    *    └▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬┘
    * 
+   * 
    *    Para Cadastrar:
-   *  ┌▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬┬▬▬▬▬▬▬▬▬▬▬▬▬▬┬▬▬▬▬▬▬▬▬▬▬▬▬▬┬▬▬▬▬▬▬▬▬▬▬▬▬┬▬▬▬▬▬▬▬▬▬▬▬▬▬┬▬▬▬▬▬▬▬▬▬▬▬▬┬▬▬▬▬▬▬▬▬▬▬┐
-   *  │ Nome:           │ BadLooking  │ HeavyBrain  │ EgoFlying  │ CodingCaos  │ UfoOfStar  │ WeedMan  │
-   *  │ Nacionalidade:  │ França      │ Brasil      │ EUA        │ Austrália   │ México     │ Jamaica  │
-   *  │ idade:          │ 30          │ 29          │ 35         │ 28          │ 37         │ 42       │
-   *  │ altura:         │ 1.75        │ 1.68        │ 1.65       │ 1.93        │ 1.70       │ 1.82     │
-   *  │ peso:           │ 68,9        │ 57.8        │ 80.9       │ 81.6        │ 119.3      │ 108.5    │
-   *  │ categoria:      │ Leve        │ Leve        │ Médio      │ Médio       │ Pesado     │ Pesado   │
-   *  │ vitórias:       │ 11          │ 14          │ 12         │ 13          │ 5          │ 18       │
-   *  │ derrotas:       │ 2           │ 2           │ 2          │ 0           │ 4          │ 2        │
-   *  │ empates:        │ 1           │ 3           │ 1          │ 2           │ 3          │ 4        │
-   *  └▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬┴▬▬▬▬▬▬▬▬▬▬▬▬▬┴▬▬▬▬▬▬▬▬▬▬▬▬▬┴▬▬▬▬▬▬▬▬▬▬▬▬┴▬▬▬▬▬▬▬▬▬▬▬▬▬┴▬▬▬▬▬▬▬▬▬▬▬▬┴▬▬▬▬▬▬▬▬▬▬┘
+   *  ┌▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬┬▬▬▬▬▬▬▬▬▬▬▬▬┬▬▬▬▬▬▬▬▬▬▬▬▬┬▬▬▬▬▬▬▬▬▬▬▬┬▬▬▬▬▬▬▬▬▬▬▬▬┬▬▬▬▬▬▬▬▬▬▬▬┬▬▬▬▬▬▬▬▬▬┐
+   *  │ Nome          │ BadLooking │ HeavyBrain │ EgoFlying │ CodingCaos │ UfoOfStar │ WeedMan │
+   *  │ Nacionalidade │ França     │ Brasil     │ EUA       │ Austrália  │ México    │ Jamaica │
+   *  │ idade         │ 30         │ 29         │ 35        │ 28         │ 37        │ 42      │
+   *  │ altura        │ 1.75       │ 1.68       │ 1.65      │ 1.93       │ 1.70      │ 1.82    │
+   *  │ peso          │ 68,9       │ 57.8       │ 80.9      │ 81.6       │ 119.3     │ 108.5   │
+   *  │ categoria     │ Leve       │ Leve       │ Médio     │ Médio      │ Pesado    │ Pesado  │
+   *  │ vitórias      │ 11         │ 14         │ 12        │ 13         │ 5         │ 18      │
+   *  │ derrotas      │ 2          │ 2          │ 2         │ 0          │ 4         │ 2       │
+   *  │ empates       │ 1          │ 3          │ 1         │ 2          │ 3         │ 4       │
+   *  └▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬┴▬▬▬▬▬▬▬▬▬▬▬▬┴▬▬▬▬▬▬▬▬▬▬▬▬┴▬▬▬▬▬▬▬▬▬▬▬┴▬▬▬▬▬▬▬▬▬▬▬▬┴▬▬▬▬▬▬▬▬▬▬▬┴▬▬▬▬▬▬▬▬▬┘
+   *    Regras de uma luta:
+   *      - Só pode ser marcada entre lutadores da mesma categoria
+   *      - Desafiado e desafiante, obviamente devem ser diferentes 
+   *      - Só pode acontecer s ela estiver aprovada
+   *      - Só pode ter como resultado a vitória de um lutador ou o empate
    * 
    */
     require_once './var_util.php';
     require_once 'Lutador.php';
+    require_once 'Luta.php';
     
     $l = array();
     $l[0] = new Lutador("BadLooking", "França",30,1.75,68.9,11,2,1);
@@ -62,8 +69,11 @@
     $l[4] = new Lutador("UfoOfStar", "México",37,1.70,119.3,5,4,3);
     $l[5] = new Lutador("WeedMan", "Jamaica",42,1.82,108.5,18,2,4);
 
-    foreach ($l as $key) {
-        $key->estado();
-        $key->apresentar();
-        //mostrarEstado($key);
-    }
+    $lut1 = new Luta($l[4], $l[5]);
+    mostrarEstado($lut1);
+    $lut1->lutar();
+
+    $l[4]->estado();
+    $l[5]->estado();
+
+// ────────────────────────────────────────────────────────────────────────────────────────────────┘
