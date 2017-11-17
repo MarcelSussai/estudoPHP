@@ -89,7 +89,14 @@ require_once 'Publicacao.php';
   // |─────────────────────────────────────────────────────────────────────────────────────────────|
   //    detalhes()
         public function detalhes(){
-
+            $pl = " <br>\n";
+            $s1 = "<strong>";
+            $s2 = "</strong>";
+            $hr = "\n<hr>\n";
+            echo "Livro: ".$s1.$this->getTitulo().$s2." escrito por ".$s1.$this->getAutor().$s2.$pl;
+            echo "Páginas: ".$s1.$this->getTotPag().$s2.$pl;
+            echo "Sendo lido por: ".$s1.$this->leitor->getNome().$s2.$pl;
+            echo "Página Atual: ".$s1.$this->getPagAtual().$s2.$hr;
         }
   // |─────────────────────────────────────────────────────────────────────────────────────────────|
   //    abrir()

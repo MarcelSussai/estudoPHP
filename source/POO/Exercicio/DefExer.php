@@ -54,4 +54,10 @@ $l[0] = new Livro("Deus um delírio","Richard Dawkins", 380, $p[0]);
 $l[1] = new Livro("As façanhas de alguém desconhecido", "alguém desconhecido", 400, $p[1]);
 
 mostrarEstado($l[0]);
-mostrarEstado($l[1]);
+//mostrarEstado($l[1]);
+
+$l[0]->abrir();
+$l[0]->folhear(64);
+
+$l[0]->detalhes();
+$l[1]->detalhes();

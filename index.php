@@ -54,7 +54,8 @@
     // include 'source/datas.php';
     // include 'source/POO/OrientaObjeto.php';
     // require_once 'source/POO/Luta/definicao.php';
-    require_once 'source/POO/Exercicio/DefExer.php';
+    // require_once 'source/POO/Exercicio/DefExer.php';
+    require_once 'source/POO/Heranca.php';
   // └─────────────────────────────────────────────────────────────────────────────────────────────┘
 // ────────────────────────────────────────────────────────────────────────────────────────────────┘
 
