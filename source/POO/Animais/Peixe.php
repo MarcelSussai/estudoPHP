@@ -15,5 +15,14 @@ class Peixe extends Animal {
     public function soltarBolha() {
         echo "Soltando Bolha";
     }
+    public function locomover() {
+        echo "Nadando";
+    }
+    public function alimentar() {
+        echo "Comendo Planctons";
+    }
+    public function emitirSom() {
+        echo "Som submarino de peixe";
+    }
 
 }

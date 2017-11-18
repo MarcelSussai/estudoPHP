@@ -13,6 +13,15 @@ class Ave extends Animal {
     }
   // |─────────────────────────────────────────────────────────────────────────────────────────────|
     public function fazerNinho() {
-        echo "Fazendo Ninho";
+        echo "Construindo Ninho";
+    }
+    public function locomover() {
+        echo "Voando";
+    }
+    public function alimentar() {
+        echo "Comendo Frutas";
+    }
+    public function emitirSom() {
+        echo "Som de Ave";
     }
 }
