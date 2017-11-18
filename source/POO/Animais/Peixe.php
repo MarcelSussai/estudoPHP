@@ -12,6 +12,13 @@ class Peixe extends Animal {
         return $this->corEscama;
     }
   // |─────────────────────────────────────────────────────────────────────────────────────────────|
+    public function __construct($peso,$idade,$membros,$corEscama){
+        $this->setPeso($peso);
+        $this->setIdade($idade);
+        $this->setMembros($membros);
+        $this->setCorEscama($corEscama);
+    }
+
     public function soltarBolha() {
         echo "Soltando Bolha";
     }

@@ -12,6 +12,14 @@ class Ave extends Animal {
         return $this->corPena;
     }
   // |─────────────────────────────────────────────────────────────────────────────────────────────|
+
+    public function __construct($peso,$idade,$membros,$corPena){
+        $this->setPeso($peso);
+        $this->setIdade($idade);
+        $this->setMembros($membros);
+        $this->setCorPena($corPena);
+    }
+
     public function fazerNinho() {
         echo "Construindo Ninho";
     }

@@ -10,6 +10,12 @@ require_once 'Animal.php';
         public function getCorPelo() {
             return $this->corPelo;
         }
+        public function __construct($peso,$idade,$membros,$corPelo){
+            $this->setPeso($peso);
+            $this->setIdade($idade);
+            $this->setMembros($membros);
+            $this->setCorPelo($corPelo);
+        }
         public function locomover() {
             echo "Correndo";
         }
