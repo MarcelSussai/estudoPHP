@@ -86,140 +86,156 @@ require_once './var_util.php';
   // └─────────────────────────────────────────────────────────────────────────────────────────────┘
 // ────────────────────────────────────────────────────────────────────────────────────────────────┘
 
+// ────────────────────────────────────────────────────────────────────────────────────────────────┐
+//  laço de repetição for
+  // ┌─────────────────────────────────────────────────────────────────────────────────────────────┐
+  /*     Exemplo 1 
+   *    Cuidado com os loops infinitos!!!
+   *
+   *    Primeira parte: Cria o contador
+   *    Segunda parte: enquanto o contador for menor que 10 rode
+   *    Terceira parte: incrementa o contador
+   */
+    for ($i = 0; $i < 10; $i++) {
+        echo $i." ";
+    }
+    echo $pl.$pl;
+  // |─────────────────────────────────────────────────────────────────────────────────────────────|
+  /*     para imprimir de 5 em 5 até 500
+   */
+    for ($i = 0; $i <= 1000; $i+=5) {
+        echo $i." ";
+    }
+    echo $pl.$pl;
+  // |─────────────────────────────────────────────────────────────────────────────────────────────|
+  /*    retirando partes da pesquisa
+   */
+    for ($i = 0; $i <= 1000; $i+=5) {
+        if ($i > 64 && $i < 512) continue;
+        echo $i." ";
+    }
+    echo $pl.$pl;
+  // |─────────────────────────────────────────────────────────────────────────────────────────────|
+  /*    retornando datas com for
+   */
+    for ($i=date("Y"); $i > date("Y")-100; $i--) {
+        echo $i." ";
+    }
+    echo $hr;
+  // |─────────────────────────────────────────────────────────────────────────────────────────────|
+  /*    fazendo um select em html com for
+   *
+   */
+    echo "<select>";
+    for ($i=date("Y"); $i > date("Y")-1000; $i--) {
+        echo '<option value="'.$i.'">'.$i.'</option>';
+    }
+    echo "</select>".$pl.$hr;
+  // └─────────────────────────────────────────────────────────────────────────────────────────────┘
+// ────────────────────────────────────────────────────────────────────────────────────────────────┘
 
-// -For---------------------------------------------------------------┐
-    // ┌--------------------------------------------------------------┐
-    // |    For                                                       |
-    // | Cuidado com os loops infinitos!!!                            |
-    // | Primeira parte: Cria o contador                              |
-    // | Segunda parte: enquanto o contador for menor que 10 rode     |
-    // | Terceira parte: incrementa o contador                        |
-        for ($i = 0; $i < 10; $i++) {
-            echo $i." ";
+// ────────────────────────────────────────────────────────────────────────────────────────────────┐
+//  Foreach
+  // ┌─────────────────────────────────────────────────────────────────────────────────────────────┐
+  /*    De novo, há no PHP funções nativas que tratam a data, mas para fins didáticos nesse
+   *    Array a percorrer:
+   */
+    $meses = array(
+        "Janeiro", "Fevereiro", "Março",
+        "Abril", "Maio", "Junho",
+        "Julho", "Agosto", "Setembro",
+        "Outubro", "Novembro", "Dezembro"
+    );
+  // |─────────────────────────────────────────────────────────────────────────────────────────────|
+  /*    Eis o foreach
+   */
+    foreach($meses as $mes) {
+        echo "O mês é ".$mes.$pl;
+    }
+    echo $hr;
+  // |─────────────────────────────────────────────────────────────────────────────────────────────|
+  /*    para saber a posição
+   */
+    foreach($meses as $index => $mes) {
+        echo "O mês é ".$mes." e o indice ".$index.$pl;
+    }
+    echo $hr;
+  // |─────────────────────────────────────────────────────────────────────────────────────────────|
+  /*    com html
+   *
+   */
+    ?>
+    <form>
+        Nome: 
+        <input type="text" name="Nome"><br>
+        Data de Nascimento:
+        <input type="date" name="Nascimento"><br>
+        <input type="submit" name="Enviar">
+    </form>
+    <hr>
+    <?php
+  // |─────────────────────────────────────────────────────────────────────────────────────────────|
+  /*    agora fazemos assim:
+   */
+    if (isset($_GET)) {
+        foreach($_GET as $key => $value) {
+            echo "Nome do campo: ".$key.$pl;
+            echo "Valor do campo: ".$value.$pl.$hr;
         }
-        echo $pl.$pl;
-    // |--------------------------------------------------------------|
-    // | para imprimir de 5 em 5 até 500                              |
-        for ($i = 0; $i <= 1000; $i+=5) {
-            echo $i." ";
-        }
-        echo $pl.$pl;
-    // |--------------------------------------------------------------|
-    // | retirando partes da pesquisa                                 |
-        for ($i = 0; $i <= 1000; $i+=5) {
-            if ($i > 64 && $i < 512) continue;
-            echo $i." ";
-        }
-        echo $pl.$pl;
-    // |--------------------------------------------------------------|
-    // | retornando datas com for
-        for ($i=date("Y"); $i > date("Y")-100; $i--) {
-            echo $i." ";
-        }
-        echo $hr;
-    // |--------------------------------------------------------------|
-    // | fazendo um select
-        echo "<select>";
-        for ($i=date("Y"); $i > date("Y")-1000; $i--) {
-            echo '<option value="'.$i.'">'.$i.'</option>';
-        }
-        echo "</select>".$pl.$hr;
-    // └--------------------------------------------------------------┘
-// -------------------------------------------------------------------┘
+    }
+  // └─────────────────────────────────────────────────────────────────────────────────────────────┘
+// ────────────────────────────────────────────────────────────────────────────────────────────────┘
 
-
-// -Foreach-----------------------------------------------------------┐
-    // ┌--------------------------------------------------------------┐
-    // |    Foreach                                                   |
-    // | De novo, há no PHP funções nativas que tratam a data, mas    |
-    // | para fins didáticos:                                         |
-    // | Array a percorrer:                                           |
-        $meses = array(
-            "Janeiro", "Fevereiro", "Março",
-            "Abril", "Maio", "Junho",
-            "Julho", "Agosto", "Setembro",
-            "Outubro", "Novembro", "Dezembro"
-        );
-    // |--------------------------------------------------------------|
-    // | Foreach                                                      |
-        foreach($meses as $mes) {
-            echo "O mês é ".$mes.$pl;
+// ────────────────────────────────────────────────────────────────────────────────────────────────┐
+//  While e do while
+  // ┌─────────────────────────────────────────────────────────────────────────────────────────────┐
+  /*    While
+   *    variavel utilizada:
+   */
+   $condição  = true;
+  // |─────────────────────────────────────────────────────────────────────────────────────────────|
+  /*    Laço While:
+   *    (enquanto)
+   */
+    while ($condição) {
+        $numero = rand(1, 10);
+        if ($numero === 3) {
+            echo "Três!".$pl;
+            $condição = false;
         }
-        echo $hr;
-    // |--------------------------------------------------------------|
-    // | para saber a posição                                         |
-        foreach($meses as $index => $mes) {
-            echo "O mês é ".$mes." e o indice ".$index.$pl;
+        echo $numero." ";
+    }
+    echo $hr;
+  // └─────────────────────────────────────────────────────────────────────────────────────────────┘
+
+  // ┌─────────────────────────────────────────────────────────────────────────────────────────────┐
+  /*    Do While (faça enquanto)
+   *    variáveis:
+   */
+    $tt = 160;
+    $dc = 0.9;
+  // |─────────────────────────────────────────────────────────────────────────────────────────────|
+  /*    Utilizando
+   *
+   */
+    do {
+        $tt *= $dc;
+    } while ($tt > 100);
+    echo $tt.$hr;
+  // |─────────────────────────────────────────────────────────────────────────────────────────────|
+  /*     utilize um contador para evitar o perigo de loop infinito
+   *    Outro Exemplo
+   *    Repare que validei a necessidade de usar plural
+   */
+    $contador = 1;
+    do {
+        if ($contador > 1) {
+            echo $contador." vezes".$pl;
+        } else if ($contador <= 1) {
+            echo $contador." vez".$pl;
         }
-        echo $hr;
-    // |--------------------------------------------------------------|
-    // | com html                                                     |
-        ?>
-        <form>
-            Nome: 
-            <input type="text" name="Nome"><br>
-            Data de Nascimento:
-            <input type="date" name="Nascimento"><br>
-            <input type="submit" name="Enviar">
-        </form>
-        <hr>
-        <?php
-    // |--------------------------------------------------------------|
-    // | agora fazemos assim:                                         |
-        if (isset($_GET)) {
-            foreach($_GET as $key => $value) {
-                echo "Nome do campo: ".$key.$pl;
-                echo "Valor do campo: ".$value.$pl.$hr;
-            }
-        }
-    // └--------------------------------------------------------------┘
-// -------------------------------------------------------------------┘
-
-// -While e do while--------------------------------------------------┐
-    // ┌--------------------------------------------------------------┐
-    // |    While                                                     |
-    // | variavel utilizada                                           |
-        $condição  = true;
-    // |--------------------------------------------------------------|
-    // | laço                                                         |
-        while ($condição) {
-            $numero = rand(1, 10);
-            if ($numero === 3) {
-                echo "Três!".$pl;
-                $condição = false;
-            }
-            echo $numero." ";
-        }
-        echo $hr;
-    // └--------------------------------------------------------------┘
-    // ┌--------------------------------------------------------------┐
-    // |    Do While                                                  |
-        $tt = 160;
-        $dc = 0.9;
-    // |--------------------------------------------------------------|
-    // | Utilizando                                                   |
-        do {
-            $tt *= $dc;
-        } while ($tt > 100);
-        echo $tt.$hr;
-    // |--------------------------------------------------------------|
-    // | utilize um contador para evitar o perigo de loop infinito    |
-    // | Outro Exemplo                                                |
-        $contador = 1;
-        do {
-            if ($contador > 1) {
-                echo $contador." vezes".$pl;
-            } else if ($contador <= 1) {
-                echo $contador." vez".$pl;
-            }
-            $contador++;
-        } while ($contador <= 10);
-        echo $hr;
-    // |--------------------------------------------------------------|
-    // | Repare que validei a necessidade de usar plural              |
-    // └--------------------------------------------------------------┘
-// -------------------------------------------------------------------┘
-
-
-
-?>
+        $contador++;
+    } while ($contador <= 10);
+    echo $hr;
+  // └─────────────────────────────────────────────────────────────────────────────────────────────┘
+// ────────────────────────────────────────────────────────────────────────────────────────────────┘

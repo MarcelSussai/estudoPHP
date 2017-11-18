@@ -2,7 +2,7 @@
 
 // ────────────────────────────────────────────────────────────────────────────────────────────────┐
 //  Pessoa
-    class Pessoa {
+    abstract class Pessoa {
   // ┌─────────────────────────────────────────────────────────────────────────────────────────────┐
   //    Atributos
         private $nome;
@@ -56,7 +56,7 @@
   //    Métodos Próprios
   // |─────────────────────────────────────────────────────────────────────────────────────────────|
   //    fazerAniver()
-        public function fazerAniver() {
+        public final function fazerAniver() {
             $this->setIdade($this->getIdade() + 1);
         }
 
