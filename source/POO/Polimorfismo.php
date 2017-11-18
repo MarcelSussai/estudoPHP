@@ -115,3 +115,16 @@
    *                └───────────────────────────────────┘
    * 
    */
+  // |─────────────────────────────────────────────────────────────────────────────────────────────|
+    require_once 'Animais/Animal.php';
+    require_once 'Animais/Mamifero.php';
+    require_once 'Animais/Cachorro.php';
+    require_once 'Animais/Canguru.php';
+    require_once 'Animais/Peixe.php';
+    require_once 'Animais/Goldfish.php';
+    require_once 'Animais/Ave.php';
+    require_once 'Animais/Arara.php';
+    require_once 'Animais/Reptil.php';
+    require_once 'Animais/Cobra.php';
+    require_once 'Animais/Tartaruga.php';
+  // |─────────────────────────────────────────────────────────────────────────────────────────────|
