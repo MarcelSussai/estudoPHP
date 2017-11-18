@@ -1,5 +1,6 @@
 <?php
 require_once 'Pessoa.php';
+require_once './var_util.php';
 // ────────────────────────────────────────────────────────────────────────────────────────────────┐
 //  Aluno
     class Aluno extends Pessoa {
@@ -33,9 +34,12 @@ require_once 'Pessoa.php';
 
   // ┌─────────────────────────────────────────────────────────────────────────────────────────────┐
   //    Construtor
-        public function __construct($crs) {
-            $this->setMat($this->getMat()+1);
-            $this->setCurso($crs);
+        public function __construct($nome,$idade,$sexo,$curso,$mat) {
+            $this->setMat($mat);
+            $this->setCurso($curso);
+            $this->setNome($nome);
+            $this->setIdade($idade);
+            $this->setSexo($sexo);
         }
   // └─────────────────────────────────────────────────────────────────────────────────────────────┘
 
@@ -44,7 +48,8 @@ require_once 'Pessoa.php';
   // |─────────────────────────────────────────────────────────────────────────────────────────────|
   //    pagarMensalidade()
         public function pagarMensalidade(){
-
+            global $pl, $hr, $s1,$s2;
+            echo "Pagando a mensalidade do aluno ".$s1.$this->getNome().$s2.$hr;
         }
   // └─────────────────────────────────────────────────────────────────────────────────────────────┘
 

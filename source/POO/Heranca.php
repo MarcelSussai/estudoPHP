@@ -102,40 +102,42 @@
     require_once 'Heranca/Funcionario.php';
     require_once 'Heranca/Pessoa.php';
     require_once 'Heranca/Professor.php';
+    require_once 'Heranca/Bolsista.php';
+    require_once 'Heranca/Visitante.php';
+    require_once 'Heranca/Tecnico.php';
   // |─────────────────────────────────────────────────────────────────────────────────────────────|
   /*    Criando um aluno
    */
-    $a1 = new Aluno(1,"Informática");
-    $a1->setNome("Marcel");
-    $a1->setIdade(31);
-    $a1->setSexo("M");
+    $a1 = new Aluno("Marcel",31,"M","Informática","M001");
   // |─────────────────────────────────────────────────────────────────────────────────────────────|
   /*    Criando um professor
    */
-    $pr1 = new Professor("Programação",3500);
-    $pr1->setNome("Cláudio");
-    $pr1->setIdade(46);
-    $pr1->setSexo("M");
+    $pr1 = new Professor("Logico da Silva",46,"M","Programação",3500);
   // |─────────────────────────────────────────────────────────────────────────────────────────────|
   /*    Criando um Funcionário
    */
-    $fun1 = new Funcionario("Estoque", true);
-    $fun1->setNome("Fabiana");
-    $fun1->setIdade(21);
-    $fun1->setSexo("F");
+    $fun1 = new Funcionario("Fabiana",21,"F","Estoque", true);
+
+    $bo1 = new Bolsista("Alguém da Silva",17,"F","Programação","M002");
+
+    $vi1 = new Visitante;
+    $vi1->setNome("TESTE");
   // |─────────────────────────────────────────────────────────────────────────────────────────────|
   /*    Mostrando o estado dos objetos criados que herdam caracteristicas da classe pessoa!
    */
     mostrarEstado($a1);
     mostrarEstado($pr1);
     mostrarEstado($fun1);
+    mostrarEstado($vi1);
+    mostrarEstado($bo1);
   // |─────────────────────────────────────────────────────────────────────────────────────────────|
   /*    Fazendo alterações nos objetos criados
    */
     $pr1->receberAum(600);
     mostrarEstado($pr1);
-
-
+    $a1->pagarMensalidade();
+    $bo1->pagarMensalidade();
+    $bo1->renovarBolsa();
   // └─────────────────────────────────────────────────────────────────────────────────────────────┘
 
 

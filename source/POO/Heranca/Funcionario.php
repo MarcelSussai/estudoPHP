@@ -33,9 +33,12 @@ require_once 'Pessoa.php';
 
   // ┌─────────────────────────────────────────────────────────────────────────────────────────────┐
   //    Construtor
-        public function __construct($set, $trb) {
+        public function __construct($nome,$idade,$sexo,$set, $trb) {
             $this->setSetor($set);
             $this->setTrabalhando($trb);
+            $this->setNome($nome);
+            $this->setIdade($idade);
+            $this->setSexo($sexo);
         }
   // └─────────────────────────────────────────────────────────────────────────────────────────────┘
 
