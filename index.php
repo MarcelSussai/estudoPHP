@@ -58,7 +58,8 @@
     // require_once 'source/POO/Exercicio/DefExer.php';
     // require_once 'source/POO/Heranca.php';
     // require_once 'source/POO/Polimorfismo.php';
-    require_once 'source/POO/Sobrecarga/index_sobrecarga.php';
+    // require_once 'source/POO/Sobrecarga/index_sobrecarga.php';
+    require_once 'source/POO/Visualizador/indexVisualizador.php';
   // └─────────────────────────────────────────────────────────────────────────────────────────────┘
 // ────────────────────────────────────────────────────────────────────────────────────────────────┘
 

@@ -8,6 +8,15 @@ class Video implements AcoesVideo {
     private $curtidas;
     private $reproduzindo;
 
+
+    public function __construct($titulo) {
+        $this->setTitulo($titulo);
+        $this->setAvaliacao(1);
+        $this->setViews(0);
+        $this->setCurtidas(0);
+        $this->setReproduzindo(false);
+    }
+
     public function setTitulo($titulo) {
         $this->titulo = $titulo;
     }
@@ -44,13 +53,13 @@ class Video implements AcoesVideo {
     }
 
     public function like() {
-
+        $this->setCurtidas($this->getCurtidas() + 1);
     }
     public function play() {
-
+        $this->setReproduzindo(true);
     }
     public function pause() {
-        
+        $this->setReproduzindo(false);
     }
 
 }

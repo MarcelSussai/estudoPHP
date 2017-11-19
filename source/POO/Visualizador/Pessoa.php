@@ -1,10 +1,17 @@
 <?php
 
-class Pessoa {
+abstract class Pessoa {
     protected $nome;
     protected $idade;
     protected $sexo;
     protected $experiencia;
+
+    public function __construct($nome,$idade,$sexo) {
+        $this->setNome($nome);
+        $this->setIdade($idade);
+        $this->setSexo($sexo);
+        $this->setExperiencia(0);
+    } 
 
 
     public function setNome($v) {
@@ -36,8 +43,8 @@ class Pessoa {
     }
 
 
-    protected function ganharExp() {
-        
+    protected function ganharExp($experiencia) {
+        $this->setExperiencia($this->getExperiencia()+$experiencia);
     }
 
 }
