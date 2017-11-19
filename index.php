@@ -44,16 +44,16 @@
               em produção utilizo outra estrutura de comentário/código/resultado".$hr;
   // |─────────────────────────────────────────────────────────────────────────────────────────────|
   //    Arquivos / Conteúdo
-    // require 'source/variaveis.php';
-    // include 'source/operadores.php';
-    // include 'source/strings.php';
-    // include 'source/estruturas_de_controle.php';
-    // include 'source/arrays.php';
-    // include 'source/constantes.php';
-    // include 'source/sessoes.php';
-    // include 'source/funcoes.php';
-    // include 'source/datas.php';
-    // include 'source/POO/OrientaObjeto.php';
+    // require_once 'source/variaveis.php';
+    // require_once 'source/operadores.php';
+    // require_once 'source/strings.php';
+    // require_once 'source/estruturas_de_controle.php';
+    // require_once 'source/arrays.php';
+    // require_once 'source/constantes.php';
+    // require_once 'source/sessoes.php';
+    // require_once 'source/funcoes.php';
+    // require_once 'source/datas.php';
+    // require_once 'source/POO/OrientaObjeto.php';
     // require_once 'source/POO/Luta/definicao.php';
     // require_once 'source/POO/Exercicio/DefExer.php';
     // require_once 'source/POO/Heranca.php';
@@ -61,7 +61,8 @@
     // require_once 'source/POO/Sobrecarga/index_sobrecarga.php';
     // require_once 'source/POO/Visualizador/indexVisualizador.php';
     // require_once 'source/POO/CPF/ValidaCPF.php';
-    require_once 'source/POO/CPF/Endereco.php';
+    // require_once 'source/POO/CPF/Endereco.php';
+    require_once 'source/POO/Interface/Veiculo.php';
   // └─────────────────────────────────────────────────────────────────────────────────────────────┘
 // ────────────────────────────────────────────────────────────────────────────────────────────────┘
 
