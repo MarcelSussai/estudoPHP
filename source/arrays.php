@@ -3,7 +3,7 @@ require_once './var_util.php';
 // ────────────────────────────────────────────────────────────────────────────────────────────────┐
 //  Arrays
   // ┌─────────────────────────────────────────────────────────────────────────────────────────────┐
-  //    Um array é uma variável que é uma coleção de dados   
+  //    Um array é uma variável que é uma coleção de dados dá pra passar um array em return em um metodo
     $frutas = array(
         "laranja", 
         "Abóbora",
