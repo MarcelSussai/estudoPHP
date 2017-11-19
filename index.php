@@ -62,7 +62,7 @@
     // require_once 'source/POO/Visualizador/indexVisualizador.php';
     // require_once 'source/POO/CPF/ValidaCPF.php';
     // require_once 'source/POO/CPF/Endereco.php';
-    require_once 'source/POO/Interface/Veiculo.php';
+    // require_once 'source/POO/Interface/Veiculo.php';
   // └─────────────────────────────────────────────────────────────────────────────────────────────┘
 // ────────────────────────────────────────────────────────────────────────────────────────────────┘
 

@@ -6,7 +6,7 @@ interface Veiculo {
     public function trocarMarcha($marc);
 }
 
-class Civic implements Veiculo {
+class Automovel implements Veiculo {
 
 
     public function acelerar($velo):string{
@@ -22,6 +22,7 @@ class Civic implements Veiculo {
         return "mudou para marcha ".$marc.$hr;
     }
 }
+
 $v = new Civic();
 echo $v->acelerar(46);
 echo $v->trocarMarcha(3);
