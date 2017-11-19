@@ -21,9 +21,8 @@
    */
     function mostrarEstado($o) {
         global $f1,$f2,$hr;
-        var_dump($o);
         echo $f1;
-        print_r($o);
+        var_dump($o);
         echo $f2.$hr;
     }
   // └─────────────────────────────────────────────────────────────────────────────────────────────┘

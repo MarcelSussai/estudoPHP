@@ -64,7 +64,8 @@ require_once './var_util.php';
    *      Métodos Modificadores (setters)
    *      Métodos Construtores ()
    * 
-   * 
+   *  Métodos Estáticos
+   *    
    * 
    * 
    * 
