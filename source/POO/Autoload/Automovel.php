@@ -1,6 +1,5 @@
 <?php
 require_once './var_util.php';
-require_once 'Veiculo.php';
 abstract class Automovel implements Veiculo {
     public function acelerar($velo):string{
         global $pl,$hr,$s1,$s2;

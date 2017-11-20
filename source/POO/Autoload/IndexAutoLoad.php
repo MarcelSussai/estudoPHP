@@ -1,10 +1,10 @@
 <?php
-function __autoload($nomeClasse){
-    
+
+spl_autoload_register(function($nomeClasse){
     var_dump($nomeClasse);
-    require_once "$nomeClasse.php";
-    
-}
-$teste = new Opala();
+    $dir = $nomeClasse.".php";
+    require_once($dir);
+});
+
+$teste = new Opala;
 echo $teste->acelerar(80);
-echo $teste->freiar();

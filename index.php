@@ -32,7 +32,7 @@
     require_once 'var_util.php';
   // |─────────────────────────────────────────────────────────────────────────────────────────────|
   //    Cabeçalho, começo da página
-    include_once 'source/head.php';
+    include_once 'source'.DIRECTORY_SEPARATOR.'head.php';
   // └─────────────────────────────────────────────────────────────────────────────────────────────┘
 
   // ┌─────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -64,6 +64,8 @@
     // require_once 'source/POO/CPF/Endereco.php';
     // require_once 'source/POO/Interface/Veiculo.php';
     // require_once 'source/POO/Autoload/IndexAutoLoad.php';
+    require_once 'source/POO/Namespaces/IndexNamespaces.php';
+
   // └─────────────────────────────────────────────────────────────────────────────────────────────┘
 // ────────────────────────────────────────────────────────────────────────────────────────────────┘
 
@@ -71,5 +73,15 @@
 //  Final
     finalPagina();
 // ────────────────────────────────────────────────────────────────────────────────────────────────┘
-
+  /*    ideias de Estruturas de pastas para exemplo 
+   *    
+   *    index.php
+   *    header.php
+   *    [interface]
+   *    [config]
+   *        config.php
+   *    [class]
+   *        connection.class.php
+   *        autoload.class.php
+   */
 ?>
