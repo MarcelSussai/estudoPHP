@@ -158,26 +158,182 @@ order by nome;
 select * from cursos
 order by nome desc;
 */
-
+/*
 select ano, carga,nome  from cursos
 order by ano, nome;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
+/*
+select nome, carga from cursos
+where ano = '2017'
+order by nome;
+*/
+/*
+select nome, descri, carga from cursos
+where ano = '2016'
+order by nome;
+*/
+/*
+select nome, descri, carga, ano from cursos
+where ano < '2017'
+order by nome, ano;
+*/
+/*/*
+> maior
+< menor
+!= <> diferente
+*/
+/*
+select nome, descri, carga, ano from cursos
+where ano <> '2017'
+order by nome, ano;
+*/
+/*
+select * from cursos
+where totaulas between 20 and 40
+order by nome desc, ano asc;
+*/
+/*
+select nome, ano from cursos
+where ano between 2015 and 2016;
+*/
+/*
+update cursos
+set ano = '2014'
+where idcurso = '8';
+*/
+/*
+select nome, descri, ano from cursos
+where ano in (2014,2016)
+order by ano;
+*/
+/*
+select * from cursos
+where carga > 35 and totaulas < 40
+order by nome;
+*/
+/*
+select * from cursos
+where carga > 35 or totaulas < 40
+order by nome;
+*/
+/*
+select * from cursos
+where nome = 'PHP';
+*/
+/*
+select * from cursos
+where nome like 'P%';
+*/
+/*
+select * from cursos
+where nome like '%A';
+*/
+/*
+select * from cursos
+where nome like '%A%';
+*/
+/*
+select * from cursos
+where nome not like '%A%';
+*/
+/*
+select * from cursos
+where nome like 'PH%P';
+*/
+/*
+select * from cursos
+where nome like 'PH%P%';
+*/
+/*
+select * from cursos
+where nome like '%o%e%_';
+*/
+/*
+select distinct carga from cursos;
+*/
+/*
+select distinct nacionalidade from pessoas;
+order by nacionalidade
+*/
+/*
+select distinct carga from cursos
+order by carga;
+*/
+/*
+select count(*) from cursos;
+*/
+/*
+select count(*) from cursos
+where carga > 30;
+*/
+/*
+select max(totaulas) from cursos;
+*/
+/*
+select max(totaulas) from cursos
+where ano = 2015;
+*/
+/*
+select nome, min(totaulas) from cursos
+where ano = 2015;
+*/
+/*
+select sum(carga) from cursos;
+*/
+/*
+select sum(totaulas) from cursos;
+*/
+/*
+select avg(totaulas) from cursos;
+*/
+/*
+select nome from pessoas;
+*/
+/*
+select * from pessoas
+where nascimento between '2000-01-01' and '2015-12-31';
+*/
+/*
+select * from pessoas
+where nome like 'g%'and
+nacionalidade = 'Brasil' and
+sexo = 'F';
+*/
+/*
+select nome, nacionalidade from pessoas
+where nome like '%i%' and
+nacionalidade <> 'Brasil' and
+peso < 100 and
+sexo = 'M';
+*/
+/*
+select max(altura) from pessoas
+where nacionalidade = 'Brasil' and sexo = 'M';
+*/
+/*
+select min(peso) from pessoas
+where sexo = 'M' and nacionalidade <> 'Brasil' and 
+nascimento between '1980-01-01' and '2000-12-31';
+*/
+/*
+select count(*) from pessoas
+where sexo = 'M' and altura > 1.90;
+*/
+/*
+select carga from cursos
+group by carga;
+*/
+/*
+select carga, count(nome) from cursos
+group by carga;
+*/
+/*
+select totaulas, count(*) from cursos
+group by totaulas
+order by totaulas;
+*/
+/*
+select carga, count(nome) from cursos where totaulas = 56
+group by carga;
+*/
 
