@@ -334,6 +334,125 @@ order by totaulas;
 */
 /*
 select carga, count(nome) from cursos where totaulas = 56
-group by carga;
+group by carga
+having count(nome) > 1;
 */
+/*
+select ano, count(*) from cursos 
+where totaulas > 30
+group by ano
+having ano > 2014
+order by count(*);
+*/
+/*
+select avg(carga) from cursos;
+*/
+/*
+select carga, count(*) from cursos
+where ano > 2015
+group by carga
+having carga > (select avg(carga) from cursos);
+*/
+/*
+select profissao, count(*) from pessoas
+group by profissao;
+*/
+/*
+select sexo, count(*) from pessoas
+where nascimento > '1986-01-01'
+group by sexo;
+*/
+/*
+select nacionalidade, count(*) from pessoas
+where nacionalidade <> 'Brasil'
+group by nacionalidade
+having count(nacionalidade) > 2;
+*/
+/*
+select nome, peso, altura, count(*) from pessoas
+where peso > 80 and altura > (select avg(altura) from pessoas)
+group by altura;
+*/
+/*
+alter table pessoas
+add column cursando_curso int;
+*/
+/*
+alter table pessoas
+add foreign key (cursando_curso)
+references cursos(idcurso);
+*/
+/*
+update pessoas set cursando_curso = '15'
+where id = '14';
+*/
+/*
+delete from cursos where idcurso = 14;
+*/
+/*
+select p.id, p.nome, p.cursando_curso, c.nome, c.ano 
+from pessoas as p
+join cursos as c
+on c.idcurso = p.cursando_curso;
+*/
+/*
+select p.id, p.nome, p.cursando_curso, c.nome, c.ano 
+from pessoas as p
+left outer join cursos as c
+on c.idcurso = p.cursando_curso;
+*/
+/*
+select p.id, p.nome, p.cursando_curso, c.nome, c.ano 
+from pessoas as p
+right join cursos as c
+on c.idcurso = p.cursando_curso;
+*/
+/*
+create table fez_curso (
+	id int not null auto_increment,
+    dia date,
+    idpessoas int,
+    idcurso int,
+    primary key (id),
+    foreign key (idpessoas) references pessoas(id),
+    foreign key (idcurso) references cursos(idcurso)
+) default charset = utf8;
+*/
+/*
+insert into fez_curso values
+(default, '2014-04-18', '1', '2');
+*/
+/*
+select p.nome, idcurso from pessoas p 
+join fez_curso f
+on p.id = f.idpessoas;
+*/
+/*
+select p.nome, f.idcurso, c.nome from pessoas p 
+join fez_curso f
+on p.id = f.idpessoas
+join cursos c 
+on f.idcurso = c.idcurso;
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
