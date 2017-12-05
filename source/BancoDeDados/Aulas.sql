@@ -2,6 +2,7 @@
 create database cadastro;
 use cadastro;
 */
+
 /*
 create table pessoas(
 	nome varchar(30),
@@ -12,6 +13,7 @@ create table pessoas(
     nacionalidade varchar(20)
 );
 */
+
 /*
 describe pessoas;
 */
@@ -23,9 +25,11 @@ create database cadastro
 default character set utf8
 default collate utf8_general_ci;
 */
+
 /*
 use cadastro;
 */
+
 /*
 create table pessoas (
 	id int not null auto_increment,
@@ -39,38 +43,46 @@ create table pessoas (
     
 )default charset = utf8;
 */
+
 /*
 insert into pessoas
 (nome, nascimento, sexo, peso, altura)
 values
 ('Maaria','1953-04-07','F','60.8','1.60');
 */
+
 /*
 insert into pessoas values
 (default,'Louco','1982-05-22','M','63.8','1.76','Japão'),
 (default,'Outro','1980-04-16','M','86.6','1.90', default),
 (default,'Doidão','1981-11-26','M','96.4','2.03',default);
 */
+
 /*
 alter table pessoas
 add column profissao varchar(10);
 */
+
 /*
 alter table pessoas
 drop column profissao;
 */
+
 /*
 alter table pessoas
 add column profissao varchar(20) not null default '' after nome;
 */
+
 /*
 alter table pessoas
 add column codigo int first;
 */
+
 /*
 alter table pessoasid
 drop column prof;
 */
+
 /*
 alter table pessoas 
 modify column profissao varchar(20) not null default '';

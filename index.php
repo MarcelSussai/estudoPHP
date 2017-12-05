@@ -65,7 +65,7 @@
     // require_once 'source/POO/Interface/Veiculo.php';
     // require_once 'source/POO/Autoload/IndexAutoLoad.php';
     // require_once 'source/POO/Namespaces/IndexNamespaces.php';
-
+    require_once 'source/BancoDeDados/MySQLi/exemplo_01.php';
   // └─────────────────────────────────────────────────────────────────────────────────────────────┘
 // ────────────────────────────────────────────────────────────────────────────────────────────────┘
 
